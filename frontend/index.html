@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Hub | Management System</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="nav glass" id="navbar" style="display: none;">
+        <div class="nav-brand">CustomerHub</div>
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+            <div id="user-info" style="display: flex; align-items: center; gap: 0.75rem;">
+                <div class="avatar" id="user-avatar">A</div>
+                <div style="font-size: 0.9rem; font-weight: 500;" id="user-name">Admin</div>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="logout()">
+                <i data-lucide="log-out"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="container" style="position: relative;">
+
+        <!-- LOGIN -->
+        <section id="loginSection" class="auth-container glass fade-in">
+            <h2>Welcome Back</h2>
+            <input id="email" class="input-field" placeholder="Email">
+            <input id="password" type="password" class="input-field" placeholder="Password">
+            <button class="btn btn-primary" onclick="login()">Login</button>
+            <p onclick="showRegister()">Create Account</p>
+        </section>
+
+        <!-- REGISTER -->
+        <section id="registerSection" class="auth-container glass fade-in" style="display:none;">
+            <h2>Create Account</h2>
+            <input id="reg_email" class="input-field" placeholder="Email">
+            <input id="reg_username" class="input-field" placeholder="Username">
+            <input id="reg_password" type="password" class="input-field" placeholder="Password">
+            <select id="role" class="input-field">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+                <option value="superadmin">Super Admin</option>
+            </select>
+            <button class="btn btn-primary" onclick="register()">Register</button>
+            <p onclick="showLogin()">Back to Login</p>
+        </section>
+
+        <!-- DASHBOARD -->
+        <section id="dashboardSection" style="display:none;">
+
+            <div class="dashboard-grid">
+
+                <!-- CUSTOMER CARD -->
+                <div class="card glass">
+
+                    <div class="card-header">
+                        <div class="card-title"><i data-lucide="users"></i> Customers</div>
+                        <button class="btn btn-primary btn-sm" onclick="openModal('customerModal')">
+                            <i data-lucide="plus"></i> Add Customer
+                        </button>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Contact</th>
+                                    <th>Addresses</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="customerTable"></tbody>
+                        </table>
+                    </div>
+
+                    <!-- PAGINATION -->
+                    <div
+                        style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem; padding:0.5rem 1rem; border-top: 1px solid rgba(0,0,0,0.05);">
+
+                        <div style="display:flex; align-items:center; gap:0.5rem;">
+                            <span style="font-size:0.8rem; color:var(--text-muted);">Rows:</span>
+                            <select id="limitSelector" class="input-field"
+                                style="width:auto; padding:2px 5px; margin:0; font-size:0.8rem;"
+                                onchange="changeLimit()">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                            </select>
+                        </div>
+
+                        <div style="display:flex; align-items:center; gap:1rem;">
+                            <button id="prevBtn" class="btn btn-outline btn-sm" onclick="prevPage()">
+                                <i data-lucide="chevron-left"></i> Prev
+                            </button>
+
+                            <div style="font-size:0.85rem; font-weight:600; min-width:60px; text-align:center;">
+                                Page <span id="currentPage">1</span>
+                            </div>
+
+                            <button id="nextBtn" class="btn btn-outline btn-sm" onclick="nextPage()">
+                                Next <i data-lucide="chevron-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ADMIN & ACTIONS CARD -->
+                <div id="admin-actions" style="display: none; display: flex; flex-direction: column; gap: 1.5rem;">
+
+                    <div class="card glass">
+                        <h3
+                            style="margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="bar-chart-2"></i> System Stats
+                        </h3>
+                        <div style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-muted);">
+                            Total Users: <span id="total-users"
+                                style="font-weight: 700; color: var(--text-main);">0</span>
+                        </div>
+
+                        <h3 style="margin-bottom: 0.5rem; font-size: 1rem;">Bulk Import (CSV)</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.25rem;">Customers</div>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <input type="file" id="csv-input" accept=".csv" class="input-field" style="padding: 0.4rem; font-size: 0.75rem;">
+                                    <button class="btn btn-primary btn-sm" onclick="uploadCSV()">Upload</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.25rem;">Addresses</div>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <input type="file" id="addr-csv-input" accept=".csv" class="input-field" style="padding: 0.4rem; font-size: 0.75rem;">
+                                    <button class="btn btn-primary btn-sm" onclick="uploadAddressCSV()">Upload</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card glass" id="userManagementSection" style="display: none;">
+                        <h3
+                            style="margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="shield"></i> User Management
+                        </h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Role</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="userTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- MODALS -->
+    <div id="customerModal" class="form-overlay">
+        <div class="modal-content glass fade-in" style="max-width: 800px;">
+            <h3 style="margin-bottom: 1.5rem;">Add New Customer</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group"><label>Full Name</label><input type="text" id="cust_name" class="input-field">
+                </div>
+                <div class="form-group"><label>Age</label><input type="number" id="cust_age" class="input-field"></div>
+                <div class="form-group"><label>Gender</label><select id="cust_gender" class="input-field">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select></div>
+                <div class="form-group"><label>Date of Birth</label><input type="date" id="cust_dob"
+                        class="input-field"></div>
+                <div class="form-group"><label>Email</label><input type="email" id="cust_email" class="input-field">
+                </div>
+                <div class="form-group"><label>Phone</label><input type="text" id="cust_phone" class="input-field">
+                </div>
+                <div class="form-group"><label>Alternate Phone</label><input type="text" id="cust_alt_phone"
+                        class="input-field"></div>
+                <div class="form-group"><label>Company</label><input type="text" id="cust_company" class="input-field">
+                </div>
+                <div class="form-group"><label>Job Title</label><input type="text" id="cust_job" class="input-field">
+                </div>
+                <div class="form-group"><label>Experience (Years)</label><input type="number" id="cust_exp"
+                        class="input-field"></div>
+                <div class="form-group"><label>Customer Type</label><select id="cust_type" class="input-field">
+                        <option value="Lead">Lead</option>
+                        <option value="Existing">Existing</option>
+                        <option value="VIP">VIP</option>
+                    </select></div>
+                <div class="form-group"><label>Status</label><select id="cust_status" class="input-field">
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select></div>
+                <div class="form-group" style="grid-column: span 2;"><label>Notes</label><textarea id="cust_notes"
+                        class="input-field" style="height: 60px;"></textarea></div>
+                <div class="form-group"><label>Source</label><input type="text" id="cust_source" class="input-field"
+                        value="Web"></div>
+            </div>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <button class="btn btn-outline" style="flex: 1;" onclick="closeModal('customerModal')">Cancel</button>
+                <button class="btn btn-primary" style="flex: 1;" onclick="addCustomer()">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="addressModal" class="form-overlay">
+        <div class="modal-content glass fade-in">
+            <h3 style="margin-bottom: 1.5rem;">Add Address</h3>
+            <input type="hidden" id="addr_customer_id">
+            <div class="form-group"><label>City</label><input type="text" id="city" class="input-field"></div>
+            <div class="form-group"><label>State</label><input type="text" id="state" class="input-field"></div>
+            <div class="form-group"><label>Pincode</label><input type="text" id="pincode" class="input-field"></div>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <button class="btn btn-outline" style="flex: 1;" onclick="closeModal('addressModal')">Cancel</button>
+                <button class="btn btn-primary" style="flex: 1;" onclick="addAddress()">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js?v=1.2"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>
