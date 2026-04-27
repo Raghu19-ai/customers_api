@@ -8,7 +8,7 @@ services:
     ports:
       - "8000:8000"
 
-  nginx:
+  nginx:dc
     image: nginx:latest
     container_name: customer_nginx
     ports:
