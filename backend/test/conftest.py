@@ -8,8 +8,8 @@ def client():
 
 @pytest.fixture
 def auth_headers(client):
-    email = "admin@test.com"
-    password = "1234"
+    email = "admin@gmail.com"
+    password = "Admin@777"
 
     # Register
     client.post("/auth/register", json={
