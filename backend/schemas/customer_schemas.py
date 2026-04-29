@@ -95,7 +95,7 @@ class CustomerUpdate(BaseModel):
 
 # RESPONSE SCHEMA
 class CustomerResponse(CustomerCreate):
-    id: int
+    id: str
     addresses: List[AddressResponse] = Field(default_factory=list)
 
     class Config:

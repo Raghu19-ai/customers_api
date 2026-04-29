@@ -1,18 +1,13 @@
 import os
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
+from pymongo import MongoClient
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:1912@host.docker.internal:5432/customer_db")
+# Use environment variables if available (for Docker), otherwise use defaults
+MONGO_URL = os.getenv("MONGODB_URI", "mongodb://localhost:27017")
+DB_NAME = os.getenv("MONGODB_DB_NAME", "api_project")
 
-engine = create_engine(DATABASE_URL)
-   
-SessionLocal = sessionmaker(bind=engine)
+client = MongoClient(MONGO_URL)
 
-Base = declarative_base()
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+db = client[DB_NAME]
+users_collection = db["users"]
+customers_collection = db["customers"]
+addresses_collection = db["addresses"]

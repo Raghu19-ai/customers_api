@@ -1,8 +1,6 @@
 from fastapi import APIRouter, Depends, UploadFile, File, Request, status
-from sqlalchemy.orm import Session
 import csv, io
 
-from database.connection import get_db
 from schemas.customer_schemas import CustomerCreate, CustomerResponse, CustomerUpdate
 from schemas.address_schema import AddressCreate, AddressResponse as FullAddressResponse
 
@@ -18,7 +16,7 @@ from services.customer_service import (
     create_address_from_csv
 )
 
-from utils.roles import require_permission  
+from utils.roles import require_permission
 from utils.logger import logger
 from utils.exceptions import CustomException
 from utils.rate_limiter import limiter
@@ -46,7 +44,6 @@ addr_router = APIRouter(prefix="/addresses", tags=["Addresses"])
 def upload_customers(
     request: Request,
     file: UploadFile = File(...),
-    db: Session = Depends(get_db),
     user=Depends(require_permission("customer_write"))
 ):
     logger.info(f"Customer CSV upload | user={user.get('user')}")
@@ -56,7 +53,7 @@ def upload_customers(
 
     try:
         rows = list(csv.DictReader(io.StringIO(file.file.read().decode("utf-8"))))
-        customers = create_customer_from_csv(db, rows)
+        customers = create_customer_from_csv(rows)
 
         logger.info(f"Customers uploaded successfully | count={len(customers)}")
 
@@ -89,11 +86,10 @@ def upload_customers(
 def create_customer_api(
     request: Request,
     data: CustomerCreate,
-    db: Session = Depends(get_db),
     user=Depends(require_permission("customer_write"))
 ):
     logger.info(f"Create customer | user={user.get('user')} | email={data.email}")
-    return create_customer(db, data)
+    return create_customer(data)
 
 
 # GET ALL CUSTOMERS
@@ -114,7 +110,6 @@ def get_all(
     request: Request,
     page: int = 1,
     limit: int = 5,
-    db: Session = Depends(get_db),
     user=Depends(require_permission("customer_read"))
 ):
     logger.info(f"Fetch customers | user={user.get('user')} | page={page} limit={limit}")
@@ -123,12 +118,12 @@ def get_all(
         raise CustomException("Invalid pagination values", 400)
 
     limit = min(limit, 100)
-    return get_all_customers(db, page, limit)
+    return get_all_customers(page, limit)
 
 
 # GET ONE CUSTOMER
 @router.get(
-    "/{customer_id}", 
+    "/{customer_id}",
     response_model=CustomerResponse,
     summary="Get Customer Details",
     description="Fetch full details of a single customer by ID.",
@@ -142,18 +137,17 @@ def get_all(
 @limiter.limit("10/minute")
 def get_one(
     request: Request,
-    customer_id: int,
-    db: Session = Depends(get_db),
+    customer_id: str,
     user=Depends(require_permission("customer_read"))
 ):
     logger.info(f"Fetch customer | id={customer_id} | user={user.get('user')}")
-    return get_customer_by_id(db, customer_id)
+    return get_customer_by_id(customer_id)
 
 
 
 # PATCH CUSTOMER
 @router.patch(
-    "/{customer_id}", 
+    "/{customer_id}",
     response_model=CustomerResponse,
     summary="Partial Update Customer",
     description="Update specific fields of a customer record.",
@@ -169,15 +163,14 @@ def get_one(
 @limiter.limit("5/minute")
 def patch(
     request: Request,
-    customer_id: int,
+    customer_id: str,
     data: CustomerUpdate,
-    db: Session = Depends(get_db),
     user=Depends(require_permission("customer_update"))
 ):
     logger.info(f"Patch customer | id={customer_id} | user={user.get('user')}")
 
     try:
-        return patch_customer(db, customer_id, data)
+        return patch_customer(customer_id, data)
 
     except Exception:
         logger.exception("Customer patch failed")
@@ -186,7 +179,7 @@ def patch(
 
 # UPDATE CUSTOMER
 @router.put(
-    "/{customer_id}", 
+    "/{customer_id}",
     response_model=CustomerResponse,
     summary="Full Update Customer",
     description="Replace an entire customer record.",
@@ -202,15 +195,14 @@ def patch(
 @limiter.limit("5/minute")
 def update(
     request: Request,
-    customer_id: int,
+    customer_id: str,
     data: CustomerCreate,
-    db: Session = Depends(get_db),
     user=Depends(require_permission("customer_update"))
 ):
     logger.info(f"Update customer | id={customer_id} | user={user.get('user')}")
 
     try:
-        return update_customer(db, customer_id, data)
+        return update_customer(customer_id, data)
 
     except Exception:
         logger.exception("Customer update failed")
@@ -219,7 +211,7 @@ def update(
 
 # DELETE CUSTOMER
 @router.delete(
-    "/{customer_id}", 
+    "/{customer_id}",
     status_code=status.HTTP_200_OK,
     summary="Delete Customer",
     description="Remove a customer and all their associated addresses.",
@@ -234,14 +226,13 @@ def update(
 @limiter.limit("5/minute")
 def remove(
     request: Request,
-    customer_id: int,
-    db: Session = Depends(get_db),
+    customer_id: str,
     user=Depends(require_permission("customer_delete"))
 ):
     logger.warning(f"Delete customer | id={customer_id} | user={user.get('user')}")
 
     try:
-        return delete_customer(db, customer_id)
+        return delete_customer(customer_id)
 
     except Exception:
         logger.exception("Delete failed")
@@ -250,7 +241,7 @@ def remove(
 
 # ADDRESS CSV UPLOAD
 @addr_router.post(
-    "/upload", 
+    "/upload",
     summary="Bulk Upload Addresses",
     description="Upload customer addresses via CSV file.",
     responses={
@@ -264,7 +255,6 @@ def remove(
 def upload_addresses(
     request: Request,
     file: UploadFile = File(...),
-    db: Session = Depends(get_db),
     user=Depends(require_permission("address_upload"))
 ):
     logger.info(f"Address CSV upload | user={user.get('user')}")
@@ -274,7 +264,7 @@ def upload_addresses(
 
     try:
         rows = list(csv.DictReader(io.StringIO(file.file.read().decode("utf-8"))))
-        addresses = create_address_from_csv(db, rows)
+        addresses = create_address_from_csv(rows)
 
         logger.info(f"Addresses uploaded | count={len(addresses)}")
 
@@ -307,8 +297,7 @@ def upload_addresses(
 def add_address(
     request: Request,
     data: AddressCreate,
-    db: Session = Depends(get_db),
     user=Depends(require_permission("address_create"))
 ):
     logger.info(f"Add address | customer_id={data.customer_id} | user={user.get('user')}")
-    return create_address(db, data)
+    return create_address(data)

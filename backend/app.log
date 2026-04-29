@@ -9269,3 +9269,1154 @@ FROM customers
 2026-04-23 17:19:35,798 | INFO | app_logger | N/A | Response status: 200
 2026-04-23 17:19:35,926 | INFO | app_logger | N/A | Response status: 200
 2026-04-23 17:19:35,934 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 22:49:49,070 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:00:58,078 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:00:58,087 | INFO | app_logger | 48fed12a-5970-4ef8-aaa6-3967fae3d900 | Register API called | email=admin@gmail.com
+2026-04-28 23:00:58,088 | INFO | app_logger | 48fed12a-5970-4ef8-aaa6-3967fae3d900 | Register attempt | email=admin@gmail.com username=admin
+2026-04-28 23:00:58,365 | INFO | app_logger | 48fed12a-5970-4ef8-aaa6-3967fae3d900 | User registered successfully | email=admin@gmail.com
+2026-04-28 23:00:58,365 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:00:58,369 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:00:58,372 | INFO | app_logger | f3c078de-38bf-4d9b-b5c4-0c97c807a75e | Login API called | email=admin@gmail.com
+2026-04-28 23:00:58,372 | INFO | app_logger | f3c078de-38bf-4d9b-b5c4-0c97c807a75e | Login attempt | email=admin@gmail.com
+2026-04-28 23:00:58,588 | INFO | app_logger | f3c078de-38bf-4d9b-b5c4-0c97c807a75e | Login success | email=admin@gmail.com
+2026-04-28 23:00:58,589 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:00:58,592 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:00:58,597 | INFO | app_logger | 3a649d79-2504-439f-a016-ec48f265b45f | Create customer | user=admin@gmail.com | email=test@test.com
+2026-04-28 23:00:58,597 | INFO | app_logger | 3a649d79-2504-439f-a016-ec48f265b45f | Create customer | email=test@test.com
+2026-04-28 23:00:58,608 | INFO | app_logger | 3a649d79-2504-439f-a016-ec48f265b45f | Customer created | id=69f0eed2c4692ea456859461
+2026-04-28 23:00:58,610 | CRITICAL | app_logger | N/A | Unhandled Exception: 1 validation error:
+  {'type': 'int_parsing', 'loc': ('response', 'id'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': '69f0eed2c4692ea456859461'}
+
+  File "C:\Users\User\Desktop\customer_api\env\Lib\site-packages\slowapi\extension.py", line 71, in create_customer_api
+    POST /customers/
+2026-04-28 23:00:59,118 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:00:59,121 | INFO | app_logger | c39fccb1-b421-415a-894f-d1d554405711 | Register API called | email=user1@gmail.com
+2026-04-28 23:00:59,121 | INFO | app_logger | c39fccb1-b421-415a-894f-d1d554405711 | Register attempt | email=user1@gmail.com username=user
+2026-04-28 23:00:59,344 | INFO | app_logger | c39fccb1-b421-415a-894f-d1d554405711 | User registered successfully | email=user1@gmail.com
+2026-04-28 23:00:59,345 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:00:59,351 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:00:59,353 | INFO | app_logger | 7b6cacd9-a603-4cf4-93c1-8a6aec550d75 | Register API called | email=user2@gmail.com
+2026-04-28 23:00:59,354 | INFO | app_logger | 7b6cacd9-a603-4cf4-93c1-8a6aec550d75 | Register attempt | email=user2@gmail.com username=user2
+2026-04-28 23:00:59,569 | INFO | app_logger | 7b6cacd9-a603-4cf4-93c1-8a6aec550d75 | User registered successfully | email=user2@gmail.com
+2026-04-28 23:00:59,570 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:00:59,574 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:00:59,576 | INFO | app_logger | b684b81d-a435-4e0c-b1e3-42c3ddf393f5 | Login API called | email=user2@gmail.com
+2026-04-28 23:00:59,577 | INFO | app_logger | b684b81d-a435-4e0c-b1e3-42c3ddf393f5 | Login attempt | email=user2@gmail.com
+2026-04-28 23:00:59,799 | INFO | app_logger | b684b81d-a435-4e0c-b1e3-42c3ddf393f5 | Login success | email=user2@gmail.com
+2026-04-28 23:00:59,800 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:00:59,805 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:00:59,808 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:00:59,812 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:00:59,814 | INFO | app_logger | 2c1e0ede-0010-4481-a820-1b5d41ee1539 | Login API called | email=admin@gmail.com
+2026-04-28 23:00:59,814 | INFO | app_logger | 2c1e0ede-0010-4481-a820-1b5d41ee1539 | Login attempt | email=admin@gmail.com
+2026-04-28 23:01:00,032 | INFO | app_logger | 2c1e0ede-0010-4481-a820-1b5d41ee1539 | Login success | email=admin@gmail.com
+2026-04-28 23:01:00,034 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:01:00,038 | INFO | app_logger | N/A | POST http://testserver/auth/refresh
+2026-04-28 23:01:00,039 | ERROR | app_logger | 24e59ae9-5c55-4eeb-8ec9-827f276257bf | Validation Error: [{'type': 'missing', 'loc': ('body',), 'msg': 'Field required', 'input': None}] | Body: b''
+2026-04-28 23:01:00,039 | INFO | app_logger | N/A | Response status: 422
+2026-04-28 23:01:00,046 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:01:00,049 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:01:00,051 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:01:00,053 | INFO | app_logger | ae593b0b-af1b-4821-89e1-c6a05601e57c | Login API called | email=admin@gmail.com
+2026-04-28 23:01:00,054 | INFO | app_logger | ae593b0b-af1b-4821-89e1-c6a05601e57c | Login attempt | email=admin@gmail.com
+2026-04-28 23:01:00,272 | INFO | app_logger | ae593b0b-af1b-4821-89e1-c6a05601e57c | Login success | email=admin@gmail.com
+2026-04-28 23:01:00,273 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:01:00,277 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-28 23:01:00,280 | INFO | app_logger | f2780537-6235-4f74-b3ca-360560903ee1 | Fetch users API called
+2026-04-28 23:01:00,280 | INFO | app_logger | f2780537-6235-4f74-b3ca-360560903ee1 | Fetch users | skip=0 limit=10
+2026-04-28 23:01:00,281 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:01:00,287 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:01:00,289 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:01:00,292 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:01:00,295 | INFO | app_logger | d2cdd449-6570-4419-b011-694c4bd60f4e | Login API called | email=admin@gmail.com
+2026-04-28 23:01:00,295 | INFO | app_logger | d2cdd449-6570-4419-b011-694c4bd60f4e | Login attempt | email=admin@gmail.com
+2026-04-28 23:01:00,515 | INFO | app_logger | d2cdd449-6570-4419-b011-694c4bd60f4e | Login success | email=admin@gmail.com
+2026-04-28 23:01:00,515 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:01:00,519 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-28 23:01:00,521 | INFO | app_logger | 86dc6154-41bb-4374-9802-9327f7c3c4e9 | User count API called
+2026-04-28 23:01:00,524 | INFO | app_logger | 86dc6154-41bb-4374-9802-9327f7c3c4e9 | User count | total=3
+2026-04-28 23:01:00,525 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:01:00,530 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:01:00,532 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:01:00,534 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:01:00,537 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:01:00,548 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:01:00,551 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:01:00,556 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:01:00,558 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:01:00,568 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:01:00,570 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:01:00,574 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:01:00,576 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:01:00,589 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:01:00,592 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:01:00,596 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:01:00,598 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:07:46,695 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:08:18,636 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:08:21,545 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:10:52,568 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:52,577 | INFO | app_logger | 69769ec0-9515-403f-9fb4-a9d540890ae1 | Register API called | email=admin_1777398052@gmail.com
+2026-04-28 23:10:52,577 | INFO | app_logger | 69769ec0-9515-403f-9fb4-a9d540890ae1 | Register attempt | email=admin_1777398052@gmail.com username=admin_1777398052
+2026-04-28 23:10:52,817 | INFO | app_logger | 69769ec0-9515-403f-9fb4-a9d540890ae1 | User registered successfully | email=admin_1777398052@gmail.com
+2026-04-28 23:10:52,818 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:10:52,821 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:10:52,824 | INFO | app_logger | b29487fb-f6c5-454a-ab83-4612968c46c0 | Login API called | email=admin_1777398052@gmail.com
+2026-04-28 23:10:52,824 | INFO | app_logger | b29487fb-f6c5-454a-ab83-4612968c46c0 | Login attempt | email=admin_1777398052@gmail.com
+2026-04-28 23:10:53,035 | INFO | app_logger | b29487fb-f6c5-454a-ab83-4612968c46c0 | Login success | email=admin_1777398052@gmail.com
+2026-04-28 23:10:53,036 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:10:53,040 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:10:53,045 | INFO | app_logger | 9f668ba0-7dc9-44c4-9ec3-3048ddec3beb | Create customer | user=admin_1777398052@gmail.com | email=test@test.com
+2026-04-28 23:10:53,045 | INFO | app_logger | 9f668ba0-7dc9-44c4-9ec3-3048ddec3beb | Create customer | email=test@test.com
+2026-04-28 23:10:53,046 | ERROR | app_logger | 9f668ba0-7dc9-44c4-9ec3-3048ddec3beb | Email already exists | Status Code: 400
+2026-04-28 23:10:53,046 | INFO | app_logger | N/A | Response status: 400
+2026-04-28 23:10:53,195 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:53,197 | INFO | app_logger | de3c81f2-afb9-46f3-802f-83f6285ed35a | Register API called | email=user1@gmail.com
+2026-04-28 23:10:53,198 | INFO | app_logger | de3c81f2-afb9-46f3-802f-83f6285ed35a | Register attempt | email=user1@gmail.com username=user
+2026-04-28 23:10:53,199 | WARNING | app_logger | de3c81f2-afb9-46f3-802f-83f6285ed35a | Duplicate email | email=user1@gmail.com
+2026-04-28 23:10:53,199 | ERROR | app_logger | de3c81f2-afb9-46f3-802f-83f6285ed35a | Email already registered | Status Code: 409
+2026-04-28 23:10:53,200 | INFO | app_logger | N/A | Response status: 409
+2026-04-28 23:10:53,211 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:53,212 | INFO | app_logger | deb3c74b-b63d-454b-92b6-c6fa88f38fe7 | Register API called | email=user2@gmail.com
+2026-04-28 23:10:53,214 | INFO | app_logger | deb3c74b-b63d-454b-92b6-c6fa88f38fe7 | Register attempt | email=user2@gmail.com username=user2
+2026-04-28 23:10:53,214 | WARNING | app_logger | deb3c74b-b63d-454b-92b6-c6fa88f38fe7 | Duplicate email | email=user2@gmail.com
+2026-04-28 23:10:53,214 | ERROR | app_logger | deb3c74b-b63d-454b-92b6-c6fa88f38fe7 | Email already registered | Status Code: 409
+2026-04-28 23:10:53,216 | INFO | app_logger | N/A | Response status: 409
+2026-04-28 23:10:53,218 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:10:53,221 | INFO | app_logger | 86814ed3-72ff-4024-b50a-1b69d15cbba1 | Login API called | email=user2@gmail.com
+2026-04-28 23:10:53,221 | INFO | app_logger | 86814ed3-72ff-4024-b50a-1b69d15cbba1 | Login attempt | email=user2@gmail.com
+2026-04-28 23:10:53,434 | INFO | app_logger | 86814ed3-72ff-4024-b50a-1b69d15cbba1 | Login success | email=user2@gmail.com
+2026-04-28 23:10:53,436 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:10:53,441 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:53,444 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:54,453 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:54,463 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:54,474 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:10:54,482 | INFO | app_logger | 08e1180d-7667-491b-8824-e3d91e27b5cc | Login API called | email=admin_1777398052@gmail.com
+2026-04-28 23:10:54,483 | INFO | app_logger | 08e1180d-7667-491b-8824-e3d91e27b5cc | Login attempt | email=admin_1777398052@gmail.com
+2026-04-28 23:10:54,718 | INFO | app_logger | 08e1180d-7667-491b-8824-e3d91e27b5cc | Login success | email=admin_1777398052@gmail.com
+2026-04-28 23:10:54,719 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:10:54,723 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:10:54,726 | INFO | app_logger | f65a9de1-fdfb-4d30-b932-2385a024270c | Login API called | email=admin@gmail.com
+2026-04-28 23:10:54,726 | INFO | app_logger | f65a9de1-fdfb-4d30-b932-2385a024270c | Login attempt | email=admin@gmail.com
+2026-04-28 23:10:54,941 | INFO | app_logger | f65a9de1-fdfb-4d30-b932-2385a024270c | Login success | email=admin@gmail.com
+2026-04-28 23:10:54,941 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:10:54,946 | INFO | app_logger | N/A | POST http://testserver/auth/refresh
+2026-04-28 23:10:54,948 | INFO | app_logger | 719f965c-867c-4633-941c-a8ce5d4ffa1e | Token refresh requested
+2026-04-28 23:10:54,949 | INFO | app_logger | 719f965c-867c-4633-941c-a8ce5d4ffa1e | Token refreshed | email=admin@gmail.com
+2026-04-28 23:10:54,950 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:10:54,955 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:54,957 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:55,968 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:55,978 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:55,991 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:10:56,001 | INFO | app_logger | 01f7a66d-f68c-4b05-955a-e696d65915bc | Login API called | email=admin_1777398052@gmail.com
+2026-04-28 23:10:56,002 | INFO | app_logger | 01f7a66d-f68c-4b05-955a-e696d65915bc | Login attempt | email=admin_1777398052@gmail.com
+2026-04-28 23:10:56,240 | INFO | app_logger | 01f7a66d-f68c-4b05-955a-e696d65915bc | Login success | email=admin_1777398052@gmail.com
+2026-04-28 23:10:56,241 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:10:56,245 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-28 23:10:56,248 | INFO | app_logger | 894b7e8e-6f8c-43b1-a7cb-ac00d5182b0e | Fetch users API called
+2026-04-28 23:10:56,248 | INFO | app_logger | 894b7e8e-6f8c-43b1-a7cb-ac00d5182b0e | Fetch users | skip=0 limit=10
+2026-04-28 23:10:56,250 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:10:56,256 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:56,257 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:57,267 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:57,277 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:57,289 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:10:57,298 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:57,321 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:57,324 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:58,331 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:58,334 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:58,337 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:10:58,340 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:58,353 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:58,357 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:59,364 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:59,370 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:59,376 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:10:59,381 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:10:59,394 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:10:59,397 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:11:00,403 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:11:00,409 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:11:00,416 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:11:00,449 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:11:00,469 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:11:00,472 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:11:01,477 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:11:01,481 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:11:01,485 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:11:01,488 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:12:49,516 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:13:13,979 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:14:23,919 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:14:51,451 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:15:18,332 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:16:15,091 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:15,099 | INFO | app_logger | a5ed7d60-d0b6-4f37-89dd-23a25b3b1650 | Register API called | email=admin_1777398375@gmail.com
+2026-04-28 23:16:15,100 | INFO | app_logger | a5ed7d60-d0b6-4f37-89dd-23a25b3b1650 | Register attempt | email=admin_1777398375@gmail.com username=admin_1777398375
+2026-04-28 23:16:15,371 | INFO | app_logger | a5ed7d60-d0b6-4f37-89dd-23a25b3b1650 | User registered successfully | email=admin_1777398375@gmail.com
+2026-04-28 23:16:15,373 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:16:15,377 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:16:15,379 | INFO | app_logger | 0b92d99c-8aa9-4852-b3b0-99540586eccf | Login API called | email=admin_1777398375@gmail.com
+2026-04-28 23:16:15,379 | INFO | app_logger | 0b92d99c-8aa9-4852-b3b0-99540586eccf | Login attempt | email=admin_1777398375@gmail.com
+2026-04-28 23:16:15,601 | INFO | app_logger | 0b92d99c-8aa9-4852-b3b0-99540586eccf | Login success | email=admin_1777398375@gmail.com
+2026-04-28 23:16:15,603 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:16:15,606 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:16:15,610 | INFO | app_logger | e95eb061-17db-42ea-ac88-f916671f34c9 | Create customer | user=admin_1777398375@gmail.com | email=test_1777398375@test.com
+2026-04-28 23:16:15,611 | INFO | app_logger | e95eb061-17db-42ea-ac88-f916671f34c9 | Create customer | email=test_1777398375@test.com
+2026-04-28 23:16:15,612 | INFO | app_logger | e95eb061-17db-42ea-ac88-f916671f34c9 | Customer created | id=69f0f2679e5305ed68b2872e
+2026-04-28 23:16:15,613 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:16:15,617 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-28 23:16:15,620 | INFO | app_logger | 31ae3b20-a89c-4f0a-93b5-e07c83720d20 | Add address | customer_id=69f0f2679e5305ed68b2872e | user=admin_1777398375@gmail.com
+2026-04-28 23:16:15,620 | INFO | app_logger | 31ae3b20-a89c-4f0a-93b5-e07c83720d20 | Create address | customer_id=69f0f2679e5305ed68b2872e
+2026-04-28 23:16:15,629 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:16:15,778 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:15,780 | INFO | app_logger | fdc5463e-fe90-4f3d-a533-81bb1065d965 | Register API called | email=user_1777398375@gmail.com
+2026-04-28 23:16:15,780 | INFO | app_logger | fdc5463e-fe90-4f3d-a533-81bb1065d965 | Register attempt | email=user_1777398375@gmail.com username=user_1777398375
+2026-04-28 23:16:16,000 | INFO | app_logger | fdc5463e-fe90-4f3d-a533-81bb1065d965 | User registered successfully | email=user_1777398375@gmail.com
+2026-04-28 23:16:16,001 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:16:16,007 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:16,009 | INFO | app_logger | fedf6ade-2527-4c4e-86ee-e908df9e6e13 | Register API called | email=loginuser_1777398375@gmail.com
+2026-04-28 23:16:16,009 | INFO | app_logger | fedf6ade-2527-4c4e-86ee-e908df9e6e13 | Register attempt | email=loginuser_1777398375@gmail.com username=loginuser_1777398375
+2026-04-28 23:16:16,235 | INFO | app_logger | fedf6ade-2527-4c4e-86ee-e908df9e6e13 | User registered successfully | email=loginuser_1777398375@gmail.com
+2026-04-28 23:16:16,236 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:16:16,239 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:16:16,241 | INFO | app_logger | 8301bae6-8217-4e36-8a3f-3225b848e162 | Login API called | email=loginuser_1777398375@gmail.com
+2026-04-28 23:16:16,242 | INFO | app_logger | 8301bae6-8217-4e36-8a3f-3225b848e162 | Login attempt | email=loginuser_1777398375@gmail.com
+2026-04-28 23:16:16,459 | INFO | app_logger | 8301bae6-8217-4e36-8a3f-3225b848e162 | Login success | email=loginuser_1777398375@gmail.com
+2026-04-28 23:16:16,460 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:16:16,465 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:16,468 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:16,472 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:16:16,475 | INFO | app_logger | 8d12457e-6674-4cb8-94e8-fbaad34d3ead | Login API called | email=refreshuser_1777398375@gmail.com
+2026-04-28 23:16:16,475 | INFO | app_logger | 8d12457e-6674-4cb8-94e8-fbaad34d3ead | Login attempt | email=refreshuser_1777398375@gmail.com
+2026-04-28 23:16:16,476 | WARNING | app_logger | 8d12457e-6674-4cb8-94e8-fbaad34d3ead | Invalid login | email=refreshuser_1777398375@gmail.com
+2026-04-28 23:16:16,477 | ERROR | app_logger | 8d12457e-6674-4cb8-94e8-fbaad34d3ead | Invalid credentials | Status Code: 401
+2026-04-28 23:16:16,477 | INFO | app_logger | N/A | Response status: 401
+2026-04-28 23:16:16,486 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:16,489 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:17,495 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:17,498 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:17,502 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:16:17,505 | INFO | app_logger | 53efa163-4f89-49f1-bdcb-eda73131e03c | Login API called | email=admin_1777398375@gmail.com
+2026-04-28 23:16:17,505 | INFO | app_logger | 53efa163-4f89-49f1-bdcb-eda73131e03c | Login attempt | email=admin_1777398375@gmail.com
+2026-04-28 23:16:17,731 | INFO | app_logger | 53efa163-4f89-49f1-bdcb-eda73131e03c | Login success | email=admin_1777398375@gmail.com
+2026-04-28 23:16:17,732 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:16:17,735 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-28 23:16:17,739 | INFO | app_logger | 149674be-3691-48d3-b2be-2e0a7764bb13 | Fetch users API called
+2026-04-28 23:16:17,740 | INFO | app_logger | 149674be-3691-48d3-b2be-2e0a7764bb13 | Fetch users | skip=0 limit=10
+2026-04-28 23:16:17,741 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:16:17,746 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:17,748 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:18,757 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:18,766 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:18,773 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:16:18,776 | INFO | app_logger | cc4e0a12-9c4c-438e-ab03-5176ba6b1d4a | Login API called | email=admin_1777398375@gmail.com
+2026-04-28 23:16:18,778 | INFO | app_logger | cc4e0a12-9c4c-438e-ab03-5176ba6b1d4a | Login attempt | email=admin_1777398375@gmail.com
+2026-04-28 23:16:19,003 | INFO | app_logger | cc4e0a12-9c4c-438e-ab03-5176ba6b1d4a | Login success | email=admin_1777398375@gmail.com
+2026-04-28 23:16:19,004 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:16:19,008 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-28 23:16:19,011 | INFO | app_logger | efb918f8-e4a2-4770-b1db-6b4aac0deb26 | User count API called
+2026-04-28 23:16:19,012 | INFO | app_logger | efb918f8-e4a2-4770-b1db-6b4aac0deb26 | User count | total=7
+2026-04-28 23:16:19,013 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:16:19,018 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:19,020 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:20,029 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:20,036 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:20,043 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:16:20,049 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:20,066 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:20,070 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:21,075 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:21,077 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:21,082 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:16:21,086 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:21,102 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:21,136 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:22,146 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:22,154 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:22,163 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:16:22,168 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:22,188 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:22,192 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:23,211 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:16:23,223 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:16:23,234 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:16:23,241 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:17:40,787 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:17:54,709 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:18:20,247 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:18:55,930 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:19:16,350 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:19:55,806 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:20:44,810 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:21:30,340 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:21:30,346 | INFO | app_logger | fb166705-683d-4aa0-afaf-0ff6c893ba0e | Register API called | email=admin_1777398690_7658@gmail.com
+2026-04-28 23:21:30,347 | INFO | app_logger | fb166705-683d-4aa0-afaf-0ff6c893ba0e | Register attempt | email=admin_1777398690_7658@gmail.com username=admin_1777398690_7658
+2026-04-28 23:21:30,594 | INFO | app_logger | fb166705-683d-4aa0-afaf-0ff6c893ba0e | User registered successfully | email=admin_1777398690_7658@gmail.com
+2026-04-28 23:21:30,595 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:21:32,605 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:21:32,618 | INFO | app_logger | 28cbdabc-9c4d-4e5d-8ff0-6d8e4eb70b28 | Login API called | email=admin_1777398690_7658@gmail.com
+2026-04-28 23:21:32,619 | INFO | app_logger | 28cbdabc-9c4d-4e5d-8ff0-6d8e4eb70b28 | Login attempt | email=admin_1777398690_7658@gmail.com
+2026-04-28 23:21:32,867 | INFO | app_logger | 28cbdabc-9c4d-4e5d-8ff0-6d8e4eb70b28 | Login success | email=admin_1777398690_7658@gmail.com
+2026-04-28 23:21:32,868 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:21:32,872 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:21:32,876 | INFO | app_logger | 2b2350eb-772b-49f0-9ca1-ec7f03c4467a | Create customer | user=admin_1777398690_7658@gmail.com | email=test_1777398692@test.com
+2026-04-28 23:21:32,876 | INFO | app_logger | 2b2350eb-772b-49f0-9ca1-ec7f03c4467a | Create customer | email=test_1777398692@test.com
+2026-04-28 23:21:32,878 | INFO | app_logger | 2b2350eb-772b-49f0-9ca1-ec7f03c4467a | Customer created | id=69f0f3a46221a6e153ccf928
+2026-04-28 23:21:32,879 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:21:32,883 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-28 23:21:32,885 | INFO | app_logger | 5de0a1e5-8de0-44aa-b399-ba0b01c25de6 | Add address | customer_id=69f0f3a46221a6e153ccf928 | user=admin_1777398690_7658@gmail.com
+2026-04-28 23:21:32,887 | INFO | app_logger | 5de0a1e5-8de0-44aa-b399-ba0b01c25de6 | Create address | customer_id=69f0f3a46221a6e153ccf928
+2026-04-28 23:21:32,888 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:21:32,894 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:21:32,895 | INFO | app_logger | ea217b2f-ab8c-46cf-9fff-5df7492d7894 | Register API called | email=user_1777398690_3534@gmail.com
+2026-04-28 23:21:32,895 | INFO | app_logger | ea217b2f-ab8c-46cf-9fff-5df7492d7894 | Register attempt | email=user_1777398690_3534@gmail.com username=user_1777398690_3534
+2026-04-28 23:21:33,107 | INFO | app_logger | ea217b2f-ab8c-46cf-9fff-5df7492d7894 | User registered successfully | email=user_1777398690_3534@gmail.com
+2026-04-28 23:21:33,108 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:21:33,114 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:21:33,117 | INFO | app_logger | 2bfd2f62-3754-437d-a590-7b0709ccd677 | Register API called | email=loginuser_1777398690_3534@gmail.com
+2026-04-28 23:21:33,117 | INFO | app_logger | 2bfd2f62-3754-437d-a590-7b0709ccd677 | Register attempt | email=loginuser_1777398690_3534@gmail.com username=loginuser_1777398690_3534
+2026-04-28 23:21:33,332 | INFO | app_logger | 2bfd2f62-3754-437d-a590-7b0709ccd677 | User registered successfully | email=loginuser_1777398690_3534@gmail.com
+2026-04-28 23:21:33,333 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:21:34,344 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:21:34,349 | INFO | app_logger | 115453dd-5a06-496a-9483-cd41bee5e845 | Login API called | email=loginuser_1777398690_3534@gmail.com
+2026-04-28 23:21:34,350 | INFO | app_logger | 115453dd-5a06-496a-9483-cd41bee5e845 | Login attempt | email=loginuser_1777398690_3534@gmail.com
+2026-04-28 23:21:34,569 | INFO | app_logger | 115453dd-5a06-496a-9483-cd41bee5e845 | Login success | email=loginuser_1777398690_3534@gmail.com
+2026-04-28 23:21:34,570 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:21:34,577 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:21:34,580 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:21:36,585 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:21:36,589 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:21:37,602 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:21:37,607 | INFO | app_logger | 64507006-c936-4062-aac8-d9544d4dad25 | Login API called | email=refreshuser_1777398690_3534@gmail.com
+2026-04-28 23:21:37,609 | INFO | app_logger | 64507006-c936-4062-aac8-d9544d4dad25 | Login attempt | email=refreshuser_1777398690_3534@gmail.com
+2026-04-28 23:21:37,610 | WARNING | app_logger | 64507006-c936-4062-aac8-d9544d4dad25 | Invalid login | email=refreshuser_1777398690_3534@gmail.com
+2026-04-28 23:21:37,611 | ERROR | app_logger | 64507006-c936-4062-aac8-d9544d4dad25 | Invalid credentials | Status Code: 401
+2026-04-28 23:21:37,612 | INFO | app_logger | N/A | Response status: 401
+2026-04-28 23:21:37,775 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-28 23:21:37,777 | INFO | app_logger | 3e712558-9bda-4ec4-be06-5bf30dc4f7b0 | Fetch users API called
+2026-04-28 23:21:37,778 | INFO | app_logger | 3e712558-9bda-4ec4-be06-5bf30dc4f7b0 | Fetch users | skip=0 limit=10
+2026-04-28 23:21:37,779 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:21:37,785 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-28 23:21:37,788 | INFO | app_logger | 3ed49604-8079-4f40-bbc4-d3d88009bc49 | User count API called
+2026-04-28 23:21:37,790 | INFO | app_logger | 3ed49604-8079-4f40-bbc4-d3d88009bc49 | User count | total=10
+2026-04-28 23:21:37,791 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:21:37,796 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:21:37,799 | INFO | app_logger | a9d19a0e-6056-4e28-b911-85fa45b0a7da | Create customer | user=admin_1777398690_7658@gmail.com | email=cust_1777398690@test.com
+2026-04-28 23:21:37,799 | INFO | app_logger | a9d19a0e-6056-4e28-b911-85fa45b0a7da | Create customer | email=cust_1777398690@test.com
+2026-04-28 23:21:37,801 | INFO | app_logger | a9d19a0e-6056-4e28-b911-85fa45b0a7da | Customer created | id=69f0f3a96221a6e153ccf92c
+2026-04-28 23:21:37,802 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:21:37,807 | INFO | app_logger | N/A | GET http://testserver/customers/
+2026-04-28 23:21:37,810 | INFO | app_logger | 3d19b740-a9a1-4c0c-a968-694102803fc2 | Fetch customers | user=admin_1777398690_7658@gmail.com | page=1 limit=5
+2026-04-28 23:21:37,810 | INFO | app_logger | 3d19b740-a9a1-4c0c-a968-694102803fc2 | Fetch customers | page=1 limit=5
+2026-04-28 23:21:37,814 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:21:37,819 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:21:37,822 | INFO | app_logger | 47bb8aea-2624-4ae6-a48d-09f34c94279a | Create customer | user=admin_1777398690_7658@gmail.com | email=test_1777398697@test.com
+2026-04-28 23:21:37,823 | INFO | app_logger | 47bb8aea-2624-4ae6-a48d-09f34c94279a | Create customer | email=test_1777398697@test.com
+2026-04-28 23:21:37,824 | INFO | app_logger | 47bb8aea-2624-4ae6-a48d-09f34c94279a | Customer created | id=69f0f3a96221a6e153ccf92d
+2026-04-28 23:21:37,824 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:21:37,830 | INFO | app_logger | N/A | PUT http://testserver/customers/69f0f3a96221a6e153ccf92d
+2026-04-28 23:21:37,835 | INFO | app_logger | 9d14edf8-b0ae-4846-86c5-6ac115a47694 | Update customer | id=69f0f3a96221a6e153ccf92d | user=admin_1777398690_7658@gmail.com
+2026-04-28 23:21:37,835 | INFO | app_logger | 9d14edf8-b0ae-4846-86c5-6ac115a47694 | Update customer | id=69f0f3a96221a6e153ccf92d
+2026-04-28 23:21:37,839 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:21:37,845 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:21:37,848 | INFO | app_logger | b5f43a1e-24ff-4c47-b5ef-d918765c386f | Create customer | user=admin_1777398690_7658@gmail.com | email=test_1777398697@test.com
+2026-04-28 23:21:37,848 | INFO | app_logger | b5f43a1e-24ff-4c47-b5ef-d918765c386f | Create customer | email=test_1777398697@test.com
+2026-04-28 23:21:37,850 | INFO | app_logger | b5f43a1e-24ff-4c47-b5ef-d918765c386f | Customer created | id=69f0f3a96221a6e153ccf92e
+2026-04-28 23:21:37,850 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:21:37,855 | INFO | app_logger | N/A | DELETE http://testserver/customers/69f0f3a96221a6e153ccf92e
+2026-04-28 23:21:37,859 | WARNING | app_logger | 460c2531-21f6-47ed-94e7-9438bf375111 | Delete customer | id=69f0f3a96221a6e153ccf92e | user=admin_1777398690_7658@gmail.com
+2026-04-28 23:21:37,859 | INFO | app_logger | 460c2531-21f6-47ed-94e7-9438bf375111 | Delete customer | id=69f0f3a96221a6e153ccf92e
+2026-04-28 23:21:37,860 | INFO | app_logger | 460c2531-21f6-47ed-94e7-9438bf375111 | Customer deleted | id=69f0f3a96221a6e153ccf92e
+2026-04-28 23:21:37,861 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:25:11,198 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:25:11,206 | INFO | app_logger | c67a5901-e1bf-4a3b-81e8-f2f41b22f255 | Register API called | email=admin_1777398911_8611@gmail.com
+2026-04-28 23:25:11,206 | INFO | app_logger | c67a5901-e1bf-4a3b-81e8-f2f41b22f255 | Register attempt | email=admin_1777398911_8611@gmail.com username=admin_1777398911_8611
+2026-04-28 23:25:11,465 | INFO | app_logger | c67a5901-e1bf-4a3b-81e8-f2f41b22f255 | User registered successfully | email=admin_1777398911_8611@gmail.com
+2026-04-28 23:25:11,466 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:25:13,473 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:25:13,479 | INFO | app_logger | 47edf88f-cf64-46cf-90c4-afdbf0b1480e | Login API called | email=admin_1777398911_8611@gmail.com
+2026-04-28 23:25:13,480 | INFO | app_logger | 47edf88f-cf64-46cf-90c4-afdbf0b1480e | Login attempt | email=admin_1777398911_8611@gmail.com
+2026-04-28 23:25:13,714 | INFO | app_logger | 47edf88f-cf64-46cf-90c4-afdbf0b1480e | Login success | email=admin_1777398911_8611@gmail.com
+2026-04-28 23:25:13,716 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:25:13,719 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:25:13,723 | INFO | app_logger | df6f356e-1dcd-43a5-aa34-29d6f5172e5b | Create customer | user=admin_1777398911_8611@gmail.com | email=test_1777398913@test.com
+2026-04-28 23:25:13,723 | INFO | app_logger | df6f356e-1dcd-43a5-aa34-29d6f5172e5b | Create customer | email=test_1777398913@test.com
+2026-04-28 23:25:13,726 | INFO | app_logger | df6f356e-1dcd-43a5-aa34-29d6f5172e5b | Customer created | id=69f0f481f24c1ce3d7976ed7
+2026-04-28 23:25:13,726 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:25:13,731 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-28 23:25:13,733 | INFO | app_logger | a58cc6a5-1576-45c8-a402-52cb53dae387 | Add address | customer_id=69f0f481f24c1ce3d7976ed7 | user=admin_1777398911_8611@gmail.com
+2026-04-28 23:25:13,733 | INFO | app_logger | a58cc6a5-1576-45c8-a402-52cb53dae387 | Create address | customer_id=69f0f481f24c1ce3d7976ed7
+2026-04-28 23:25:13,735 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:25:13,742 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:25:13,744 | INFO | app_logger | aebe749b-1fa9-44df-b411-72cba3ed9b80 | Register API called | email=user_1777398911_2142@gmail.com
+2026-04-28 23:25:13,745 | INFO | app_logger | aebe749b-1fa9-44df-b411-72cba3ed9b80 | Register attempt | email=user_1777398911_2142@gmail.com username=user_1777398911_2142
+2026-04-28 23:25:13,956 | INFO | app_logger | aebe749b-1fa9-44df-b411-72cba3ed9b80 | User registered successfully | email=user_1777398911_2142@gmail.com
+2026-04-28 23:25:13,958 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:25:13,963 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:25:13,965 | INFO | app_logger | e0c8f5a6-7e74-41d1-9a17-2a0a0d427bb5 | Register API called | email=loginuser_1777398911_2142@gmail.com
+2026-04-28 23:25:13,965 | INFO | app_logger | e0c8f5a6-7e74-41d1-9a17-2a0a0d427bb5 | Register attempt | email=loginuser_1777398911_2142@gmail.com username=loginuser_1777398911_2142
+2026-04-28 23:25:14,176 | INFO | app_logger | e0c8f5a6-7e74-41d1-9a17-2a0a0d427bb5 | User registered successfully | email=loginuser_1777398911_2142@gmail.com
+2026-04-28 23:25:14,177 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:25:15,187 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:25:15,196 | INFO | app_logger | 810def16-cc5e-43ce-a31c-72d8433607c7 | Login API called | email=loginuser_1777398911_2142@gmail.com
+2026-04-28 23:25:15,197 | INFO | app_logger | 810def16-cc5e-43ce-a31c-72d8433607c7 | Login attempt | email=loginuser_1777398911_2142@gmail.com
+2026-04-28 23:25:15,426 | INFO | app_logger | 810def16-cc5e-43ce-a31c-72d8433607c7 | Login success | email=loginuser_1777398911_2142@gmail.com
+2026-04-28 23:25:15,427 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:25:15,432 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:25:15,435 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:25:17,446 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:25:17,455 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:25:18,468 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:25:18,477 | INFO | app_logger | cd378c87-c5b4-47ec-a9f3-843ba6792ee6 | Login API called | email=refreshuser_1777398911_2142@gmail.com
+2026-04-28 23:25:18,480 | INFO | app_logger | cd378c87-c5b4-47ec-a9f3-843ba6792ee6 | Login attempt | email=refreshuser_1777398911_2142@gmail.com
+2026-04-28 23:25:18,483 | WARNING | app_logger | cd378c87-c5b4-47ec-a9f3-843ba6792ee6 | Invalid login | email=refreshuser_1777398911_2142@gmail.com
+2026-04-28 23:25:18,483 | ERROR | app_logger | cd378c87-c5b4-47ec-a9f3-843ba6792ee6 | Invalid credentials | Status Code: 401
+2026-04-28 23:25:18,485 | INFO | app_logger | N/A | Response status: 401
+2026-04-28 23:25:18,664 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-28 23:25:18,667 | INFO | app_logger | 6d554947-b840-4046-bd10-29d2d915bac7 | Fetch users API called
+2026-04-28 23:25:18,667 | INFO | app_logger | 6d554947-b840-4046-bd10-29d2d915bac7 | Fetch users | skip=0 limit=10
+2026-04-28 23:25:18,668 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:25:18,674 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-28 23:25:18,676 | INFO | app_logger | eea7f8de-23f1-486e-aa26-fc76f4ee916e | User count API called
+2026-04-28 23:25:18,677 | INFO | app_logger | eea7f8de-23f1-486e-aa26-fc76f4ee916e | User count | total=13
+2026-04-28 23:25:18,677 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:25:18,681 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:25:18,684 | INFO | app_logger | fc60476d-3e0b-44e4-92a9-9ec798dfa84c | Create customer | user=admin_1777398911_8611@gmail.com | email=cust_1777398911@test.com
+2026-04-28 23:25:18,685 | INFO | app_logger | fc60476d-3e0b-44e4-92a9-9ec798dfa84c | Create customer | email=cust_1777398911@test.com
+2026-04-28 23:25:18,686 | INFO | app_logger | fc60476d-3e0b-44e4-92a9-9ec798dfa84c | Customer created | id=69f0f486f24c1ce3d7976edb
+2026-04-28 23:25:18,687 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:25:18,692 | INFO | app_logger | N/A | GET http://testserver/customers/
+2026-04-28 23:25:18,696 | INFO | app_logger | d68824c7-cabe-4a0c-8750-6ef79cf35fc1 | Fetch customers | user=admin_1777398911_8611@gmail.com | page=1 limit=5
+2026-04-28 23:25:18,697 | INFO | app_logger | d68824c7-cabe-4a0c-8750-6ef79cf35fc1 | Fetch customers | page=1 limit=5
+2026-04-28 23:25:18,700 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:25:18,705 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:25:18,709 | INFO | app_logger | 99cf1e34-9adb-43d1-be02-bd788403300d | Create customer | user=admin_1777398911_8611@gmail.com | email=test_1777398918@test.com
+2026-04-28 23:25:18,709 | INFO | app_logger | 99cf1e34-9adb-43d1-be02-bd788403300d | Create customer | email=test_1777398918@test.com
+2026-04-28 23:25:18,710 | INFO | app_logger | 99cf1e34-9adb-43d1-be02-bd788403300d | Customer created | id=69f0f486f24c1ce3d7976edc
+2026-04-28 23:25:18,712 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:25:18,715 | INFO | app_logger | N/A | PUT http://testserver/customers/69f0f486f24c1ce3d7976edc
+2026-04-28 23:25:18,719 | INFO | app_logger | 6a6ebf12-8338-4dd9-9b65-b40224430a1a | Update customer | id=69f0f486f24c1ce3d7976edc | user=admin_1777398911_8611@gmail.com
+2026-04-28 23:25:18,719 | INFO | app_logger | 6a6ebf12-8338-4dd9-9b65-b40224430a1a | Update customer | id=69f0f486f24c1ce3d7976edc
+2026-04-28 23:25:18,723 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:25:18,729 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:25:18,731 | INFO | app_logger | b3048d75-3cb8-4058-bc7f-68c2eed51dca | Create customer | user=admin_1777398911_8611@gmail.com | email=test_1777398918@test.com
+2026-04-28 23:25:18,731 | INFO | app_logger | b3048d75-3cb8-4058-bc7f-68c2eed51dca | Create customer | email=test_1777398918@test.com
+2026-04-28 23:25:18,733 | INFO | app_logger | b3048d75-3cb8-4058-bc7f-68c2eed51dca | Customer created | id=69f0f486f24c1ce3d7976edd
+2026-04-28 23:25:18,734 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:25:18,738 | INFO | app_logger | N/A | DELETE http://testserver/customers/69f0f486f24c1ce3d7976edd
+2026-04-28 23:25:18,740 | WARNING | app_logger | c248cf7b-8319-44a1-9451-0aa381493f52 | Delete customer | id=69f0f486f24c1ce3d7976edd | user=admin_1777398911_8611@gmail.com
+2026-04-28 23:25:18,741 | INFO | app_logger | c248cf7b-8319-44a1-9451-0aa381493f52 | Delete customer | id=69f0f486f24c1ce3d7976edd
+2026-04-28 23:25:18,743 | INFO | app_logger | c248cf7b-8319-44a1-9451-0aa381493f52 | Customer deleted | id=69f0f486f24c1ce3d7976edd
+2026-04-28 23:25:18,744 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:28:34,757 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-28 23:32:39,540 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:32:39,547 | INFO | app_logger | 3c984f12-ed55-48fb-b3e5-c45543529d23 | Register API called | email=admin_1777399359_1508@gmail.com
+2026-04-28 23:32:39,548 | INFO | app_logger | 3c984f12-ed55-48fb-b3e5-c45543529d23 | Register attempt | email=admin_1777399359_1508@gmail.com username=admin_1777399359_1508
+2026-04-28 23:32:39,783 | INFO | app_logger | 3c984f12-ed55-48fb-b3e5-c45543529d23 | User registered successfully | email=admin_1777399359_1508@gmail.com
+2026-04-28 23:32:39,785 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:32:41,794 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:32:41,806 | INFO | app_logger | fabff75d-7735-4ce4-b749-a762d9761b49 | Login API called | email=admin_1777399359_1508@gmail.com
+2026-04-28 23:32:41,808 | INFO | app_logger | fabff75d-7735-4ce4-b749-a762d9761b49 | Login attempt | email=admin_1777399359_1508@gmail.com
+2026-04-28 23:32:42,047 | INFO | app_logger | fabff75d-7735-4ce4-b749-a762d9761b49 | Login success | email=admin_1777399359_1508@gmail.com
+2026-04-28 23:32:42,048 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:32:42,051 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:32:42,055 | INFO | app_logger | ae82e1e5-e20a-4c4f-9724-fe38961557d0 | Create customer | user=admin_1777399359_1508@gmail.com | email=test_1777399362@test.com
+2026-04-28 23:32:42,055 | INFO | app_logger | ae82e1e5-e20a-4c4f-9724-fe38961557d0 | Create customer | email=test_1777399362@test.com
+2026-04-28 23:32:42,057 | INFO | app_logger | ae82e1e5-e20a-4c4f-9724-fe38961557d0 | Customer created | id=69f0f64264396ac3604e9db2
+2026-04-28 23:32:42,058 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:32:42,062 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-28 23:32:42,065 | INFO | app_logger | 99697fb5-7e0f-4db7-90b5-2a7839be6c75 | Add address | customer_id=69f0f64264396ac3604e9db2 | user=admin_1777399359_1508@gmail.com
+2026-04-28 23:32:42,065 | INFO | app_logger | 99697fb5-7e0f-4db7-90b5-2a7839be6c75 | Create address | customer_id=69f0f64264396ac3604e9db2
+2026-04-28 23:32:42,067 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:32:42,073 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:32:42,076 | INFO | app_logger | 573f1939-5b44-442d-a9cf-8144d092f2e7 | Register API called | email=user_1777399359_6098@gmail.com
+2026-04-28 23:32:42,076 | INFO | app_logger | 573f1939-5b44-442d-a9cf-8144d092f2e7 | Register attempt | email=user_1777399359_6098@gmail.com username=user_1777399359_6098
+2026-04-28 23:32:42,285 | INFO | app_logger | 573f1939-5b44-442d-a9cf-8144d092f2e7 | User registered successfully | email=user_1777399359_6098@gmail.com
+2026-04-28 23:32:42,286 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:32:42,291 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:32:42,293 | INFO | app_logger | a3e0acb6-5f06-4650-9517-b212bbabc720 | Register API called | email=loginuser_1777399359_6098@gmail.com
+2026-04-28 23:32:42,293 | INFO | app_logger | a3e0acb6-5f06-4650-9517-b212bbabc720 | Register attempt | email=loginuser_1777399359_6098@gmail.com username=loginuser_1777399359_6098
+2026-04-28 23:32:42,501 | INFO | app_logger | a3e0acb6-5f06-4650-9517-b212bbabc720 | User registered successfully | email=loginuser_1777399359_6098@gmail.com
+2026-04-28 23:32:42,502 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:32:43,508 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:32:43,512 | INFO | app_logger | ee4d32be-02ca-4636-9390-5961421521c5 | Login API called | email=loginuser_1777399359_6098@gmail.com
+2026-04-28 23:32:43,513 | INFO | app_logger | ee4d32be-02ca-4636-9390-5961421521c5 | Login attempt | email=loginuser_1777399359_6098@gmail.com
+2026-04-28 23:32:43,729 | INFO | app_logger | ee4d32be-02ca-4636-9390-5961421521c5 | Login success | email=loginuser_1777399359_6098@gmail.com
+2026-04-28 23:32:43,730 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:32:43,735 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:32:43,738 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:32:45,746 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-28 23:32:45,756 | INFO | app_logger | N/A | Response status: 429
+2026-04-28 23:32:46,765 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-28 23:32:46,771 | INFO | app_logger | fe3a830a-d9cc-46f8-a4e2-3ed5d24342c7 | Login API called | email=refreshuser_1777399359_6098@gmail.com
+2026-04-28 23:32:46,772 | INFO | app_logger | fe3a830a-d9cc-46f8-a4e2-3ed5d24342c7 | Login attempt | email=refreshuser_1777399359_6098@gmail.com
+2026-04-28 23:32:46,773 | WARNING | app_logger | fe3a830a-d9cc-46f8-a4e2-3ed5d24342c7 | Invalid login | email=refreshuser_1777399359_6098@gmail.com
+2026-04-28 23:32:46,774 | ERROR | app_logger | fe3a830a-d9cc-46f8-a4e2-3ed5d24342c7 | Invalid credentials | Status Code: 401
+2026-04-28 23:32:46,775 | INFO | app_logger | N/A | Response status: 401
+2026-04-28 23:32:46,936 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-28 23:32:46,939 | INFO | app_logger | b6bf6699-ad50-4704-a4e8-7e453a2ab9eb | Fetch users API called
+2026-04-28 23:32:46,940 | INFO | app_logger | b6bf6699-ad50-4704-a4e8-7e453a2ab9eb | Fetch users | skip=0 limit=10
+2026-04-28 23:32:46,941 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:32:46,946 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-28 23:32:46,948 | INFO | app_logger | c14c8f64-acb8-4b59-9525-269652a0ea80 | User count API called
+2026-04-28 23:32:46,950 | INFO | app_logger | c14c8f64-acb8-4b59-9525-269652a0ea80 | User count | total=3
+2026-04-28 23:32:46,951 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:32:46,957 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:32:46,958 | INFO | app_logger | 63090e65-92d3-4604-bcf1-27648ecc3814 | Create customer | user=admin_1777399359_1508@gmail.com | email=cust_1777399359@test.com
+2026-04-28 23:32:46,959 | INFO | app_logger | 63090e65-92d3-4604-bcf1-27648ecc3814 | Create customer | email=cust_1777399359@test.com
+2026-04-28 23:32:46,960 | INFO | app_logger | 63090e65-92d3-4604-bcf1-27648ecc3814 | Customer created | id=69f0f64664396ac3604e9db6
+2026-04-28 23:32:46,961 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:32:46,967 | INFO | app_logger | N/A | GET http://testserver/customers/
+2026-04-28 23:32:46,971 | INFO | app_logger | ba48041f-a36c-42d2-bf36-788fd4f16fef | Fetch customers | user=admin_1777399359_1508@gmail.com | page=1 limit=5
+2026-04-28 23:32:46,971 | INFO | app_logger | ba48041f-a36c-42d2-bf36-788fd4f16fef | Fetch customers | page=1 limit=5
+2026-04-28 23:32:46,973 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:32:46,978 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:32:46,981 | INFO | app_logger | fef4e283-ae6a-405f-9459-f4b453a4024b | Create customer | user=admin_1777399359_1508@gmail.com | email=test_1777399366@test.com
+2026-04-28 23:32:46,981 | INFO | app_logger | fef4e283-ae6a-405f-9459-f4b453a4024b | Create customer | email=test_1777399366@test.com
+2026-04-28 23:32:46,983 | INFO | app_logger | fef4e283-ae6a-405f-9459-f4b453a4024b | Customer created | id=69f0f64664396ac3604e9db7
+2026-04-28 23:32:46,984 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:32:46,989 | INFO | app_logger | N/A | PUT http://testserver/customers/69f0f64664396ac3604e9db7
+2026-04-28 23:32:46,993 | INFO | app_logger | 85128851-7ff4-4d79-9059-e677bcfaddde | Update customer | id=69f0f64664396ac3604e9db7 | user=admin_1777399359_1508@gmail.com
+2026-04-28 23:32:46,993 | INFO | app_logger | 85128851-7ff4-4d79-9059-e677bcfaddde | Update customer | id=69f0f64664396ac3604e9db7
+2026-04-28 23:32:46,996 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:32:47,003 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-28 23:32:47,006 | INFO | app_logger | 2b331361-91ab-4341-b527-b8bf6c11f4e5 | Create customer | user=admin_1777399359_1508@gmail.com | email=test_1777399367@test.com
+2026-04-28 23:32:47,006 | INFO | app_logger | 2b331361-91ab-4341-b527-b8bf6c11f4e5 | Create customer | email=test_1777399367@test.com
+2026-04-28 23:32:47,008 | INFO | app_logger | 2b331361-91ab-4341-b527-b8bf6c11f4e5 | Customer created | id=69f0f64764396ac3604e9db8
+2026-04-28 23:32:47,008 | INFO | app_logger | N/A | Response status: 201
+2026-04-28 23:32:47,013 | INFO | app_logger | N/A | DELETE http://testserver/customers/69f0f64764396ac3604e9db8
+2026-04-28 23:32:47,017 | WARNING | app_logger | 73f0c492-9150-44bc-9cf3-9975d7893b50 | Delete customer | id=69f0f64764396ac3604e9db8 | user=admin_1777399359_1508@gmail.com
+2026-04-28 23:32:47,017 | INFO | app_logger | 73f0c492-9150-44bc-9cf3-9975d7893b50 | Delete customer | id=69f0f64764396ac3604e9db8
+2026-04-28 23:32:47,018 | INFO | app_logger | 73f0c492-9150-44bc-9cf3-9975d7893b50 | Customer deleted | id=69f0f64764396ac3604e9db8
+2026-04-28 23:32:47,019 | INFO | app_logger | N/A | Response status: 200
+2026-04-28 23:48:36,087 | INFO | app_logger | N/A | POST http://127.0.0.1:8000/auth/register
+2026-04-28 23:48:36,094 | ERROR | app_logger | 3e9e65de-079e-4d17-920f-32ce93df09c4 | Validation Error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': {'email': 'schema_tester@example.com', 'password': 'StrongPassword@123', 'first_name': 'Schema', 'last_name': 'Tester', 'role': 'superadmin'}}] | Body: b'{"email": "schema_tester@example.com", "password": "StrongPassword@123", "first_name": "Schema", "last_name": "Tester", "role": "superadmin"}'
+2026-04-28 23:48:36,095 | INFO | app_logger | N/A | Response status: 422
+2026-04-28 23:48:36,101 | INFO | app_logger | N/A | POST http://127.0.0.1:8000/auth/login
+2026-04-28 23:48:36,104 | ERROR | app_logger | ef54eb4f-bcb4-4151-b926-bb3170a9032a | Validation Error: [{'type': 'model_attributes_type', 'loc': ('body',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': b'username=schema_tester%40example.com&password=StrongPassword%40123'}] | Body: b'username=schema_tester%40example.com&password=StrongPassword%40123'
+2026-04-28 23:48:36,106 | CRITICAL | app_logger | N/A | Unhandled Exception: Object of type bytes is not JSON serializable
+2026-04-28 23:50:52,547 | INFO | app_logger | N/A | POST http://127.0.0.1:8000/auth/register
+2026-04-28 23:50:52,549 | ERROR | app_logger | f33c523e-fd78-490e-b24b-799ad1fc1c63 | Validation Error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': {'email': 'schema_tester@example.com', 'password': 'StrongPassword@123', 'first_name': 'Schema', 'last_name': 'Tester', 'role': 'superadmin'}}] | Body: b'{"email": "schema_tester@example.com", "password": "StrongPassword@123", "first_name": "Schema", "last_name": "Tester", "role": "superadmin"}'
+2026-04-28 23:50:52,550 | INFO | app_logger | N/A | Response status: 422
+2026-04-28 23:50:52,554 | INFO | app_logger | N/A | POST http://127.0.0.1:8000/auth/login
+2026-04-28 23:50:52,557 | ERROR | app_logger | 1c1e6b7b-7ab5-4fd7-9fe8-5fb3d6b015e6 | Validation Error: [{'type': 'model_attributes_type', 'loc': ('body',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': b'username=schema_tester%40example.com&password=StrongPassword%40123'}] | Body: b'username=schema_tester%40example.com&password=StrongPassword%40123'
+2026-04-28 23:50:52,557 | CRITICAL | app_logger | N/A | Unhandled Exception: Object of type bytes is not JSON serializable
+2026-04-28 23:51:21,141 | INFO | app_logger | N/A | POST http://127.0.0.1:8000/auth/register
+2026-04-28 23:51:21,142 | ERROR | app_logger | 6dac9489-c035-4525-bbd1-1dedc8a5308a | Validation Error: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': {'email': 'schema_tester@example.com', 'password': 'StrongPassword@123', 'first_name': 'Schema', 'last_name': 'Tester', 'role': 'superadmin'}}] | Body: b'{"email": "schema_tester@example.com", "password": "StrongPassword@123", "first_name": "Schema", "last_name": "Tester", "role": "superadmin"}'
+2026-04-28 23:51:21,143 | INFO | app_logger | N/A | Response status: 422
+2026-04-28 23:51:21,147 | INFO | app_logger | N/A | POST http://127.0.0.1:8000/auth/login
+2026-04-28 23:51:21,149 | ERROR | app_logger | 1dc79dfa-4e49-4de9-9ad9-d837a7f25b07 | Validation Error: [{'type': 'model_attributes_type', 'loc': ('body',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': b'username=schema_tester%40example.com&password=StrongPassword%40123'}] | Body: b'username=schema_tester%40example.com&password=StrongPassword%40123'
+2026-04-28 23:51:21,150 | CRITICAL | app_logger | N/A | Unhandled Exception: Object of type bytes is not JSON serializable
+2026-04-29 09:20:08,385 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:20:08,396 | INFO | app_logger | bf115eee-d64f-42cb-b723-c3b028bfbde1 | Register API called | email=admin_1777434608_9810@gmail.com
+2026-04-29 09:20:08,397 | INFO | app_logger | bf115eee-d64f-42cb-b723-c3b028bfbde1 | Register attempt | email=admin_1777434608_9810@gmail.com username=admin_1777434608_9810
+2026-04-29 09:20:08,701 | INFO | app_logger | bf115eee-d64f-42cb-b723-c3b028bfbde1 | User registered successfully | email=admin_1777434608_9810@gmail.com
+2026-04-29 09:20:08,703 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:20:10,725 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:20:10,728 | INFO | app_logger | 857184e1-a3bd-401b-b533-1367a843bdc2 | Login API called | email=admin_1777434608_9810@gmail.com
+2026-04-29 09:20:10,728 | INFO | app_logger | 857184e1-a3bd-401b-b533-1367a843bdc2 | Login attempt | email=admin_1777434608_9810@gmail.com
+2026-04-29 09:20:11,019 | INFO | app_logger | 857184e1-a3bd-401b-b533-1367a843bdc2 | Login success | email=admin_1777434608_9810@gmail.com
+2026-04-29 09:20:11,021 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:20:11,027 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:20:11,031 | INFO | app_logger | 437462d0-66f2-46ac-86ff-a2856884f610 | Create customer | user=admin_1777434608_9810@gmail.com | email=test_1777434611@test.com
+2026-04-29 09:20:11,032 | INFO | app_logger | 437462d0-66f2-46ac-86ff-a2856884f610 | Create customer | email=test_1777434611@test.com
+2026-04-29 09:20:11,034 | INFO | app_logger | 437462d0-66f2-46ac-86ff-a2856884f610 | Customer created | id=69f17ff3bbff89337f1800ec
+2026-04-29 09:20:11,035 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:20:11,041 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-29 09:20:11,045 | INFO | app_logger | cac1f2a3-1613-4f11-90f7-7baa214b9bff | Add address | customer_id=69f17ff3bbff89337f1800ec | user=admin_1777434608_9810@gmail.com
+2026-04-29 09:20:11,046 | INFO | app_logger | cac1f2a3-1613-4f11-90f7-7baa214b9bff | Create address | customer_id=69f17ff3bbff89337f1800ec
+2026-04-29 09:20:11,049 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:20:11,058 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:20:11,061 | INFO | app_logger | 3812a119-9e8a-46d0-aab2-05525316e680 | Register API called | email=user_1777434608_5530@gmail.com
+2026-04-29 09:20:11,061 | INFO | app_logger | 3812a119-9e8a-46d0-aab2-05525316e680 | Register attempt | email=user_1777434608_5530@gmail.com username=user_1777434608_5530
+2026-04-29 09:20:11,347 | INFO | app_logger | 3812a119-9e8a-46d0-aab2-05525316e680 | User registered successfully | email=user_1777434608_5530@gmail.com
+2026-04-29 09:20:11,348 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:20:11,354 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:20:11,357 | INFO | app_logger | 4ba007d5-08eb-4d9b-8643-d29b91eaecfe | Register API called | email=loginuser_1777434608_5530@gmail.com
+2026-04-29 09:20:11,357 | INFO | app_logger | 4ba007d5-08eb-4d9b-8643-d29b91eaecfe | Register attempt | email=loginuser_1777434608_5530@gmail.com username=loginuser_1777434608_5530
+2026-04-29 09:20:11,632 | INFO | app_logger | 4ba007d5-08eb-4d9b-8643-d29b91eaecfe | User registered successfully | email=loginuser_1777434608_5530@gmail.com
+2026-04-29 09:20:11,633 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:20:12,640 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:20:12,646 | INFO | app_logger | a3b7b4bc-58fa-425f-8127-5651070495ff | Login API called | email=loginuser_1777434608_5530@gmail.com
+2026-04-29 09:20:12,647 | INFO | app_logger | a3b7b4bc-58fa-425f-8127-5651070495ff | Login attempt | email=loginuser_1777434608_5530@gmail.com
+2026-04-29 09:20:12,923 | INFO | app_logger | a3b7b4bc-58fa-425f-8127-5651070495ff | Login success | email=loginuser_1777434608_5530@gmail.com
+2026-04-29 09:20:12,925 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:20:12,932 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:20:12,935 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:20:14,941 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:20:14,948 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:20:15,956 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:20:15,963 | INFO | app_logger | b420587c-08b2-433a-bc6e-7645ff89c53b | Login API called | email=refreshuser_1777434608_5530@gmail.com
+2026-04-29 09:20:15,963 | INFO | app_logger | b420587c-08b2-433a-bc6e-7645ff89c53b | Login attempt | email=refreshuser_1777434608_5530@gmail.com
+2026-04-29 09:20:15,966 | WARNING | app_logger | b420587c-08b2-433a-bc6e-7645ff89c53b | Invalid login | email=refreshuser_1777434608_5530@gmail.com
+2026-04-29 09:20:15,968 | ERROR | app_logger | b420587c-08b2-433a-bc6e-7645ff89c53b | Invalid credentials | Status Code: 401
+2026-04-29 09:20:15,969 | INFO | app_logger | N/A | Response status: 401
+2026-04-29 09:20:16,214 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-29 09:20:16,217 | INFO | app_logger | f2d4cbbd-ee5c-449f-a870-806c1a03aedb | Fetch users API called
+2026-04-29 09:20:16,217 | INFO | app_logger | f2d4cbbd-ee5c-449f-a870-806c1a03aedb | Fetch users | skip=0 limit=10
+2026-04-29 09:20:16,219 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:20:16,225 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-29 09:20:16,228 | INFO | app_logger | 860be839-3870-4fb1-9b57-82fb3bb2ed52 | User count API called
+2026-04-29 09:20:16,232 | INFO | app_logger | 860be839-3870-4fb1-9b57-82fb3bb2ed52 | User count | total=6
+2026-04-29 09:20:16,232 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:20:16,239 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:20:16,242 | INFO | app_logger | b2d8f66c-baff-489f-abc2-3c290fb04de9 | Create customer | user=admin_1777434608_9810@gmail.com | email=cust_1777434608@test.com
+2026-04-29 09:20:16,242 | INFO | app_logger | b2d8f66c-baff-489f-abc2-3c290fb04de9 | Create customer | email=cust_1777434608@test.com
+2026-04-29 09:20:16,245 | INFO | app_logger | b2d8f66c-baff-489f-abc2-3c290fb04de9 | Customer created | id=69f17ff8bbff89337f1800f0
+2026-04-29 09:20:16,246 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:20:16,252 | INFO | app_logger | N/A | GET http://testserver/customers/
+2026-04-29 09:20:16,256 | INFO | app_logger | dff1717d-f95f-4b96-931d-53001d08be30 | Fetch customers | user=admin_1777434608_9810@gmail.com | page=1 limit=5
+2026-04-29 09:20:16,257 | INFO | app_logger | dff1717d-f95f-4b96-931d-53001d08be30 | Fetch customers | page=1 limit=5
+2026-04-29 09:20:16,263 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:20:16,269 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:20:16,273 | INFO | app_logger | 94764bd4-75c4-44fd-8e83-2ea3a3f97824 | Create customer | user=admin_1777434608_9810@gmail.com | email=test_1777434616@test.com
+2026-04-29 09:20:16,273 | INFO | app_logger | 94764bd4-75c4-44fd-8e83-2ea3a3f97824 | Create customer | email=test_1777434616@test.com
+2026-04-29 09:20:16,275 | INFO | app_logger | 94764bd4-75c4-44fd-8e83-2ea3a3f97824 | Customer created | id=69f17ff8bbff89337f1800f1
+2026-04-29 09:20:16,276 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:20:16,283 | INFO | app_logger | N/A | PUT http://testserver/customers/69f17ff8bbff89337f1800f1
+2026-04-29 09:20:16,328 | INFO | app_logger | b55a9fe1-4d9b-49d8-a08b-2ad8acf32b46 | Update customer | id=69f17ff8bbff89337f1800f1 | user=admin_1777434608_9810@gmail.com
+2026-04-29 09:20:16,329 | INFO | app_logger | b55a9fe1-4d9b-49d8-a08b-2ad8acf32b46 | Update customer | id=69f17ff8bbff89337f1800f1
+2026-04-29 09:20:16,334 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:20:16,342 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:20:16,348 | INFO | app_logger | 6bfd4698-28ce-4250-9660-76dafda5b52b | Create customer | user=admin_1777434608_9810@gmail.com | email=test_1777434616@test.com
+2026-04-29 09:20:16,349 | INFO | app_logger | 6bfd4698-28ce-4250-9660-76dafda5b52b | Create customer | email=test_1777434616@test.com
+2026-04-29 09:20:16,351 | INFO | app_logger | 6bfd4698-28ce-4250-9660-76dafda5b52b | Customer created | id=69f17ff8bbff89337f1800f2
+2026-04-29 09:20:16,352 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:20:16,358 | INFO | app_logger | N/A | DELETE http://testserver/customers/69f17ff8bbff89337f1800f2
+2026-04-29 09:20:16,363 | WARNING | app_logger | 3d581375-851a-457e-aae7-04caceaa408d | Delete customer | id=69f17ff8bbff89337f1800f2 | user=admin_1777434608_9810@gmail.com
+2026-04-29 09:20:16,365 | INFO | app_logger | 3d581375-851a-457e-aae7-04caceaa408d | Delete customer | id=69f17ff8bbff89337f1800f2
+2026-04-29 09:20:16,367 | INFO | app_logger | 3d581375-851a-457e-aae7-04caceaa408d | Customer deleted | id=69f17ff8bbff89337f1800f2
+2026-04-29 09:20:16,367 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:12,795 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:21:12,805 | INFO | app_logger | d47b2017-9385-4bb8-ad5a-a007f7f434f0 | Register API called | email=admin_1777434672_8510@gmail.com
+2026-04-29 09:21:12,806 | INFO | app_logger | d47b2017-9385-4bb8-ad5a-a007f7f434f0 | Register attempt | email=admin_1777434672_8510@gmail.com username=admin_1777434672_8510
+2026-04-29 09:21:13,127 | INFO | app_logger | d47b2017-9385-4bb8-ad5a-a007f7f434f0 | User registered successfully | email=admin_1777434672_8510@gmail.com
+2026-04-29 09:21:13,130 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:15,138 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:21:15,147 | INFO | app_logger | e2ea8700-9478-4bce-aee4-0031995340b2 | Login API called | email=admin_1777434672_8510@gmail.com
+2026-04-29 09:21:15,147 | INFO | app_logger | e2ea8700-9478-4bce-aee4-0031995340b2 | Login attempt | email=admin_1777434672_8510@gmail.com
+2026-04-29 09:21:15,501 | INFO | app_logger | e2ea8700-9478-4bce-aee4-0031995340b2 | Login success | email=admin_1777434672_8510@gmail.com
+2026-04-29 09:21:15,503 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:15,510 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:21:15,515 | INFO | app_logger | 34147d4c-e104-4363-90cb-6e433d019f1f | Create customer | user=admin_1777434672_8510@gmail.com | email=test_1777434675@test.com
+2026-04-29 09:21:15,518 | INFO | app_logger | 34147d4c-e104-4363-90cb-6e433d019f1f | Create customer | email=test_1777434675@test.com
+2026-04-29 09:21:15,521 | INFO | app_logger | 34147d4c-e104-4363-90cb-6e433d019f1f | Customer created | id=69f180330189592fd298b5ba
+2026-04-29 09:21:15,522 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:15,529 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-29 09:21:15,536 | INFO | app_logger | 30a02061-7186-4f30-809d-b324ca93d53e | Add address | customer_id=69f180330189592fd298b5ba | user=admin_1777434672_8510@gmail.com
+2026-04-29 09:21:15,536 | INFO | app_logger | 30a02061-7186-4f30-809d-b324ca93d53e | Create address | customer_id=69f180330189592fd298b5ba
+2026-04-29 09:21:15,539 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:15,548 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:21:15,552 | INFO | app_logger | 9e77772f-b509-45af-ba76-9e1ea8498ee1 | Register API called | email=user_1777434672_2364@gmail.com
+2026-04-29 09:21:15,553 | INFO | app_logger | 9e77772f-b509-45af-ba76-9e1ea8498ee1 | Register attempt | email=user_1777434672_2364@gmail.com username=user_1777434672_2364
+2026-04-29 09:21:15,837 | INFO | app_logger | 9e77772f-b509-45af-ba76-9e1ea8498ee1 | User registered successfully | email=user_1777434672_2364@gmail.com
+2026-04-29 09:21:15,838 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:15,844 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:21:15,848 | INFO | app_logger | 0201783f-e9aa-4c20-ac5c-56fd86e7e46c | Register API called | email=loginuser_1777434672_2364@gmail.com
+2026-04-29 09:21:15,849 | INFO | app_logger | 0201783f-e9aa-4c20-ac5c-56fd86e7e46c | Register attempt | email=loginuser_1777434672_2364@gmail.com username=loginuser_1777434672_2364
+2026-04-29 09:21:16,243 | INFO | app_logger | 0201783f-e9aa-4c20-ac5c-56fd86e7e46c | User registered successfully | email=loginuser_1777434672_2364@gmail.com
+2026-04-29 09:21:16,245 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:17,253 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:21:17,257 | INFO | app_logger | 014115da-4512-43cb-bd47-8b45b2d4dcb6 | Login API called | email=loginuser_1777434672_2364@gmail.com
+2026-04-29 09:21:17,257 | INFO | app_logger | 014115da-4512-43cb-bd47-8b45b2d4dcb6 | Login attempt | email=loginuser_1777434672_2364@gmail.com
+2026-04-29 09:21:17,526 | INFO | app_logger | 014115da-4512-43cb-bd47-8b45b2d4dcb6 | Login success | email=loginuser_1777434672_2364@gmail.com
+2026-04-29 09:21:17,527 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:17,533 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:21:17,537 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:21:19,549 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:21:19,553 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:21:20,559 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:21:20,561 | INFO | app_logger | 6fc9e17f-c9b7-4dbf-8046-07fb360b848d | Login API called | email=refreshuser_1777434672_2364@gmail.com
+2026-04-29 09:21:20,561 | INFO | app_logger | 6fc9e17f-c9b7-4dbf-8046-07fb360b848d | Login attempt | email=refreshuser_1777434672_2364@gmail.com
+2026-04-29 09:21:20,565 | WARNING | app_logger | 6fc9e17f-c9b7-4dbf-8046-07fb360b848d | Invalid login | email=refreshuser_1777434672_2364@gmail.com
+2026-04-29 09:21:20,565 | ERROR | app_logger | 6fc9e17f-c9b7-4dbf-8046-07fb360b848d | Invalid credentials | Status Code: 401
+2026-04-29 09:21:20,566 | INFO | app_logger | N/A | Response status: 401
+2026-04-29 09:21:20,764 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-29 09:21:20,768 | INFO | app_logger | cf9ceb6b-897d-4dc2-a48c-7641e5d4d6eb | Fetch users API called
+2026-04-29 09:21:20,768 | INFO | app_logger | cf9ceb6b-897d-4dc2-a48c-7641e5d4d6eb | Fetch users | skip=0 limit=10
+2026-04-29 09:21:20,771 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:20,777 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-29 09:21:20,780 | INFO | app_logger | 08925aba-d9a0-4a29-858f-2b2723feb469 | User count API called
+2026-04-29 09:21:20,782 | INFO | app_logger | 08925aba-d9a0-4a29-858f-2b2723feb469 | User count | total=9
+2026-04-29 09:21:20,782 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:20,789 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:21:20,793 | INFO | app_logger | b2bfa09b-7354-4a38-97ce-aafb0722400d | Create customer | user=admin_1777434672_8510@gmail.com | email=cust_1777434672@test.com
+2026-04-29 09:21:20,793 | INFO | app_logger | b2bfa09b-7354-4a38-97ce-aafb0722400d | Create customer | email=cust_1777434672@test.com
+2026-04-29 09:21:20,795 | INFO | app_logger | b2bfa09b-7354-4a38-97ce-aafb0722400d | Customer created | id=69f180380189592fd298b5be
+2026-04-29 09:21:20,797 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:20,803 | INFO | app_logger | N/A | GET http://testserver/customers/
+2026-04-29 09:21:20,807 | INFO | app_logger | 28d212d6-5d31-4108-94e6-6600b5adf8a3 | Fetch customers | user=admin_1777434672_8510@gmail.com | page=1 limit=5
+2026-04-29 09:21:20,807 | INFO | app_logger | 28d212d6-5d31-4108-94e6-6600b5adf8a3 | Fetch customers | page=1 limit=5
+2026-04-29 09:21:20,814 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:20,820 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:21:20,824 | INFO | app_logger | 2c2e61a5-e8a5-4e5a-8b2c-8d77520887b9 | Create customer | user=admin_1777434672_8510@gmail.com | email=test_1777434680@test.com
+2026-04-29 09:21:20,824 | INFO | app_logger | 2c2e61a5-e8a5-4e5a-8b2c-8d77520887b9 | Create customer | email=test_1777434680@test.com
+2026-04-29 09:21:20,826 | INFO | app_logger | 2c2e61a5-e8a5-4e5a-8b2c-8d77520887b9 | Customer created | id=69f180380189592fd298b5bf
+2026-04-29 09:21:20,827 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:20,832 | INFO | app_logger | N/A | PUT http://testserver/customers/69f180380189592fd298b5bf
+2026-04-29 09:21:20,837 | INFO | app_logger | 4b21bb0e-f466-4b97-9a95-e56ea1763a9e | Update customer | id=69f180380189592fd298b5bf | user=admin_1777434672_8510@gmail.com
+2026-04-29 09:21:20,837 | INFO | app_logger | 4b21bb0e-f466-4b97-9a95-e56ea1763a9e | Update customer | id=69f180380189592fd298b5bf
+2026-04-29 09:21:20,842 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:20,848 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:21:20,853 | INFO | app_logger | 50757bcf-85ba-4250-9b14-3fbb03ffc3b4 | Create customer | user=admin_1777434672_8510@gmail.com | email=test_1777434680@test.com
+2026-04-29 09:21:20,853 | INFO | app_logger | 50757bcf-85ba-4250-9b14-3fbb03ffc3b4 | Create customer | email=test_1777434680@test.com
+2026-04-29 09:21:20,855 | INFO | app_logger | 50757bcf-85ba-4250-9b14-3fbb03ffc3b4 | Customer created | id=69f180380189592fd298b5c0
+2026-04-29 09:21:20,856 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:20,861 | INFO | app_logger | N/A | DELETE http://testserver/customers/69f180380189592fd298b5c0
+2026-04-29 09:21:20,866 | WARNING | app_logger | 002e0b94-6a19-42cb-828d-3140fe91d229 | Delete customer | id=69f180380189592fd298b5c0 | user=admin_1777434672_8510@gmail.com
+2026-04-29 09:21:20,866 | INFO | app_logger | 002e0b94-6a19-42cb-828d-3140fe91d229 | Delete customer | id=69f180380189592fd298b5c0
+2026-04-29 09:21:20,868 | INFO | app_logger | 002e0b94-6a19-42cb-828d-3140fe91d229 | Customer deleted | id=69f180380189592fd298b5c0
+2026-04-29 09:21:20,869 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:23,982 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:21:23,991 | INFO | app_logger | e95f201d-bf64-49c3-ae9c-9cb080fcbec8 | Register API called | email=admin_1777434683_8393@gmail.com
+2026-04-29 09:21:23,992 | INFO | app_logger | e95f201d-bf64-49c3-ae9c-9cb080fcbec8 | Register attempt | email=admin_1777434683_8393@gmail.com username=admin_1777434683_8393
+2026-04-29 09:21:24,294 | INFO | app_logger | e95f201d-bf64-49c3-ae9c-9cb080fcbec8 | User registered successfully | email=admin_1777434683_8393@gmail.com
+2026-04-29 09:21:24,296 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:26,305 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:21:26,315 | INFO | app_logger | afeb99f1-4309-4200-98cd-20022fa4784a | Login API called | email=admin_1777434683_8393@gmail.com
+2026-04-29 09:21:26,316 | INFO | app_logger | afeb99f1-4309-4200-98cd-20022fa4784a | Login attempt | email=admin_1777434683_8393@gmail.com
+2026-04-29 09:21:26,920 | INFO | app_logger | afeb99f1-4309-4200-98cd-20022fa4784a | Login success | email=admin_1777434683_8393@gmail.com
+2026-04-29 09:21:26,923 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:26,932 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:21:26,939 | INFO | app_logger | b1193e53-8666-4693-8927-855e7b05b666 | Create customer | user=admin_1777434683_8393@gmail.com | email=test_1777434686@test.com
+2026-04-29 09:21:26,941 | INFO | app_logger | b1193e53-8666-4693-8927-855e7b05b666 | Create customer | email=test_1777434686@test.com
+2026-04-29 09:21:26,945 | INFO | app_logger | b1193e53-8666-4693-8927-855e7b05b666 | Customer created | id=69f1803e6cac0c0676c4b9dd
+2026-04-29 09:21:26,947 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:26,957 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-29 09:21:26,965 | INFO | app_logger | 0d4dcd6f-ceae-4a26-88a5-0e75e686a998 | Add address | customer_id=69f1803e6cac0c0676c4b9dd | user=admin_1777434683_8393@gmail.com
+2026-04-29 09:21:26,966 | INFO | app_logger | 0d4dcd6f-ceae-4a26-88a5-0e75e686a998 | Create address | customer_id=69f1803e6cac0c0676c4b9dd
+2026-04-29 09:21:26,971 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:26,984 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:21:26,989 | INFO | app_logger | f55c167b-24e1-4bdf-aa89-2eb34f05dce5 | Register API called | email=user_1777434683_8797@gmail.com
+2026-04-29 09:21:26,990 | INFO | app_logger | f55c167b-24e1-4bdf-aa89-2eb34f05dce5 | Register attempt | email=user_1777434683_8797@gmail.com username=user_1777434683_8797
+2026-04-29 09:21:27,492 | INFO | app_logger | f55c167b-24e1-4bdf-aa89-2eb34f05dce5 | User registered successfully | email=user_1777434683_8797@gmail.com
+2026-04-29 09:21:27,498 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:27,507 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:21:27,515 | INFO | app_logger | e88079df-2fdc-49a1-9f6d-540442c70c7b | Register API called | email=loginuser_1777434683_8797@gmail.com
+2026-04-29 09:21:27,516 | INFO | app_logger | e88079df-2fdc-49a1-9f6d-540442c70c7b | Register attempt | email=loginuser_1777434683_8797@gmail.com username=loginuser_1777434683_8797
+2026-04-29 09:21:28,007 | INFO | app_logger | e88079df-2fdc-49a1-9f6d-540442c70c7b | User registered successfully | email=loginuser_1777434683_8797@gmail.com
+2026-04-29 09:21:28,010 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:29,017 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:21:29,020 | INFO | app_logger | 9f89d97e-ac6c-48fa-8540-e900155f9a83 | Login API called | email=loginuser_1777434683_8797@gmail.com
+2026-04-29 09:21:29,021 | INFO | app_logger | 9f89d97e-ac6c-48fa-8540-e900155f9a83 | Login attempt | email=loginuser_1777434683_8797@gmail.com
+2026-04-29 09:21:29,524 | INFO | app_logger | 9f89d97e-ac6c-48fa-8540-e900155f9a83 | Login success | email=loginuser_1777434683_8797@gmail.com
+2026-04-29 09:21:29,526 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:29,537 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:21:29,545 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:21:31,561 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:21:31,571 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:21:32,582 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:21:32,586 | INFO | app_logger | bf0ff3c5-4e88-4028-89ce-9cd54adf6874 | Login API called | email=refreshuser_1777434683_8797@gmail.com
+2026-04-29 09:21:32,588 | INFO | app_logger | bf0ff3c5-4e88-4028-89ce-9cd54adf6874 | Login attempt | email=refreshuser_1777434683_8797@gmail.com
+2026-04-29 09:21:32,590 | WARNING | app_logger | bf0ff3c5-4e88-4028-89ce-9cd54adf6874 | Invalid login | email=refreshuser_1777434683_8797@gmail.com
+2026-04-29 09:21:32,591 | ERROR | app_logger | bf0ff3c5-4e88-4028-89ce-9cd54adf6874 | Invalid credentials | Status Code: 401
+2026-04-29 09:21:32,591 | INFO | app_logger | N/A | Response status: 401
+2026-04-29 09:21:33,094 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-29 09:21:33,105 | INFO | app_logger | a561647c-d593-4be9-a34a-335d72abea91 | Fetch users API called
+2026-04-29 09:21:33,105 | INFO | app_logger | a561647c-d593-4be9-a34a-335d72abea91 | Fetch users | skip=0 limit=10
+2026-04-29 09:21:33,108 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:33,121 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-29 09:21:33,130 | INFO | app_logger | 81a682ea-f123-4bdb-9237-ca8c8bfa8628 | User count API called
+2026-04-29 09:21:33,134 | INFO | app_logger | 81a682ea-f123-4bdb-9237-ca8c8bfa8628 | User count | total=12
+2026-04-29 09:21:33,136 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:33,148 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:21:33,153 | INFO | app_logger | 88d5e8ca-986b-4f87-87f8-546de7565023 | Create customer | user=admin_1777434683_8393@gmail.com | email=cust_1777434683@test.com
+2026-04-29 09:21:33,154 | INFO | app_logger | 88d5e8ca-986b-4f87-87f8-546de7565023 | Create customer | email=cust_1777434683@test.com
+2026-04-29 09:21:33,156 | INFO | app_logger | 88d5e8ca-986b-4f87-87f8-546de7565023 | Customer created | id=69f180456cac0c0676c4b9e1
+2026-04-29 09:21:33,157 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:33,168 | INFO | app_logger | N/A | GET http://testserver/customers/
+2026-04-29 09:21:33,175 | INFO | app_logger | 4210d980-5f46-461f-88fb-0727649faf9a | Fetch customers | user=admin_1777434683_8393@gmail.com | page=1 limit=5
+2026-04-29 09:21:33,176 | INFO | app_logger | 4210d980-5f46-461f-88fb-0727649faf9a | Fetch customers | page=1 limit=5
+2026-04-29 09:21:33,186 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:33,199 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:21:33,206 | INFO | app_logger | d558753b-6673-437a-ae51-cbc300de39ef | Create customer | user=admin_1777434683_8393@gmail.com | email=test_1777434693@test.com
+2026-04-29 09:21:33,207 | INFO | app_logger | d558753b-6673-437a-ae51-cbc300de39ef | Create customer | email=test_1777434693@test.com
+2026-04-29 09:21:33,212 | INFO | app_logger | d558753b-6673-437a-ae51-cbc300de39ef | Customer created | id=69f180456cac0c0676c4b9e2
+2026-04-29 09:21:33,214 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:33,227 | INFO | app_logger | N/A | PUT http://testserver/customers/69f180456cac0c0676c4b9e2
+2026-04-29 09:21:33,235 | INFO | app_logger | 06304a9d-68cb-4415-bb6e-325b925c48c5 | Update customer | id=69f180456cac0c0676c4b9e2 | user=admin_1777434683_8393@gmail.com
+2026-04-29 09:21:33,237 | INFO | app_logger | 06304a9d-68cb-4415-bb6e-325b925c48c5 | Update customer | id=69f180456cac0c0676c4b9e2
+2026-04-29 09:21:33,245 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:21:33,256 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:21:33,264 | INFO | app_logger | 67599e51-1577-416b-87bf-653a5fe24b62 | Create customer | user=admin_1777434683_8393@gmail.com | email=test_1777434693@test.com
+2026-04-29 09:21:33,265 | INFO | app_logger | 67599e51-1577-416b-87bf-653a5fe24b62 | Create customer | email=test_1777434693@test.com
+2026-04-29 09:21:33,270 | INFO | app_logger | 67599e51-1577-416b-87bf-653a5fe24b62 | Customer created | id=69f180456cac0c0676c4b9e3
+2026-04-29 09:21:33,272 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:21:33,283 | INFO | app_logger | N/A | DELETE http://testserver/customers/69f180456cac0c0676c4b9e3
+2026-04-29 09:21:33,292 | WARNING | app_logger | c1bc52ca-ab95-4d71-9b07-c11c6ba89de5 | Delete customer | id=69f180456cac0c0676c4b9e3 | user=admin_1777434683_8393@gmail.com
+2026-04-29 09:21:33,292 | INFO | app_logger | c1bc52ca-ab95-4d71-9b07-c11c6ba89de5 | Delete customer | id=69f180456cac0c0676c4b9e3
+2026-04-29 09:21:33,296 | INFO | app_logger | c1bc52ca-ab95-4d71-9b07-c11c6ba89de5 | Customer deleted | id=69f180456cac0c0676c4b9e3
+2026-04-29 09:21:33,298 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:23:49,711 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:23:49,721 | INFO | app_logger | b5b5f01a-2ba4-454e-8397-ec4a2cbcc86b | Register API called | email=user_1777434829_6783@gmail.com
+2026-04-29 09:23:49,723 | INFO | app_logger | b5b5f01a-2ba4-454e-8397-ec4a2cbcc86b | Register attempt | email=user_1777434829_6783@gmail.com username=user_1777434829_6783
+2026-04-29 09:23:50,049 | INFO | app_logger | b5b5f01a-2ba4-454e-8397-ec4a2cbcc86b | User registered successfully | email=user_1777434829_6783@gmail.com
+2026-04-29 09:23:50,052 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:28:07,512 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-29 09:28:18,054 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:28:18,061 | INFO | app_logger | bfea17e4-07d5-4a04-b0ab-91b8f8c10f3f | Register API called | email=admin_1777435098_9051@gmail.com
+2026-04-29 09:28:18,063 | INFO | app_logger | bfea17e4-07d5-4a04-b0ab-91b8f8c10f3f | Register attempt | email=admin_1777435098_9051@gmail.com username=admin_1777435098_9051
+2026-04-29 09:28:18,347 | INFO | app_logger | bfea17e4-07d5-4a04-b0ab-91b8f8c10f3f | User registered successfully | email=admin_1777435098_9051@gmail.com
+2026-04-29 09:28:18,348 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:28:20,359 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:28:20,370 | INFO | app_logger | 19af9e37-60c8-40f4-9133-25a43785b4e5 | Login API called | email=admin_1777435098_9051@gmail.com
+2026-04-29 09:28:20,373 | INFO | app_logger | 19af9e37-60c8-40f4-9133-25a43785b4e5 | Login attempt | email=admin_1777435098_9051@gmail.com
+2026-04-29 09:28:20,632 | INFO | app_logger | 19af9e37-60c8-40f4-9133-25a43785b4e5 | Login success | email=admin_1777435098_9051@gmail.com
+2026-04-29 09:28:20,633 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:28:20,637 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:28:20,641 | INFO | app_logger | 9e362ffe-2777-499e-8676-d2054602b025 | Create customer | user=admin_1777435098_9051@gmail.com | email=test_1777435100@test.com
+2026-04-29 09:28:20,641 | INFO | app_logger | 9e362ffe-2777-499e-8676-d2054602b025 | Create customer | email=test_1777435100@test.com
+2026-04-29 09:28:20,643 | INFO | app_logger | 9e362ffe-2777-499e-8676-d2054602b025 | Customer created | id=69f181dc979d57c4f064ed54
+2026-04-29 09:28:20,644 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:28:20,647 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-29 09:28:20,651 | INFO | app_logger | e3e69221-b2af-4d5a-b387-d01106c5346f | Add address | customer_id=69f181dc979d57c4f064ed54 | user=admin_1777435098_9051@gmail.com
+2026-04-29 09:28:20,651 | INFO | app_logger | e3e69221-b2af-4d5a-b387-d01106c5346f | Create address | customer_id=69f181dc979d57c4f064ed54
+2026-04-29 09:28:20,653 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:28:20,659 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:28:20,661 | INFO | app_logger | 8b4ea04e-6f1d-4679-9e85-a01d575246c9 | Register API called | email=user_1777435098_1461@gmail.com
+2026-04-29 09:28:20,661 | INFO | app_logger | 8b4ea04e-6f1d-4679-9e85-a01d575246c9 | Register attempt | email=user_1777435098_1461@gmail.com username=user_1777435098_1461
+2026-04-29 09:28:20,899 | INFO | app_logger | 8b4ea04e-6f1d-4679-9e85-a01d575246c9 | User registered successfully | email=user_1777435098_1461@gmail.com
+2026-04-29 09:28:20,900 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:28:20,906 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:28:20,909 | INFO | app_logger | 218b351d-a013-4dc2-ba25-205b621cc8da | Register API called | email=loginuser_1777435098_1461@gmail.com
+2026-04-29 09:28:20,910 | INFO | app_logger | 218b351d-a013-4dc2-ba25-205b621cc8da | Register attempt | email=loginuser_1777435098_1461@gmail.com username=loginuser_1777435098_1461
+2026-04-29 09:28:21,155 | INFO | app_logger | 218b351d-a013-4dc2-ba25-205b621cc8da | User registered successfully | email=loginuser_1777435098_1461@gmail.com
+2026-04-29 09:28:21,156 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:28:22,166 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:28:22,173 | INFO | app_logger | 9a29db08-7e31-4543-8dd9-017d84181958 | Login API called | email=loginuser_1777435098_1461@gmail.com
+2026-04-29 09:28:22,173 | INFO | app_logger | 9a29db08-7e31-4543-8dd9-017d84181958 | Login attempt | email=loginuser_1777435098_1461@gmail.com
+2026-04-29 09:28:22,413 | INFO | app_logger | 9a29db08-7e31-4543-8dd9-017d84181958 | Login success | email=loginuser_1777435098_1461@gmail.com
+2026-04-29 09:28:22,414 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:28:22,420 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:28:22,423 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:28:24,433 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:28:24,444 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:28:25,454 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:28:25,460 | INFO | app_logger | 89b63adf-f9bc-4747-8cd6-f3dc11527670 | Login API called | email=refreshuser_1777435098_1461@gmail.com
+2026-04-29 09:28:25,461 | INFO | app_logger | 89b63adf-f9bc-4747-8cd6-f3dc11527670 | Login attempt | email=refreshuser_1777435098_1461@gmail.com
+2026-04-29 09:28:25,462 | WARNING | app_logger | 89b63adf-f9bc-4747-8cd6-f3dc11527670 | Invalid login | email=refreshuser_1777435098_1461@gmail.com
+2026-04-29 09:28:25,463 | ERROR | app_logger | 89b63adf-f9bc-4747-8cd6-f3dc11527670 | Invalid credentials | Status Code: 401
+2026-04-29 09:28:25,464 | INFO | app_logger | N/A | Response status: 401
+2026-04-29 09:28:25,644 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-29 09:28:25,649 | INFO | app_logger | 36a4e0b2-a4dc-484e-9edd-a06840ccae10 | Fetch users API called
+2026-04-29 09:28:25,650 | INFO | app_logger | 36a4e0b2-a4dc-484e-9edd-a06840ccae10 | Fetch users | skip=0 limit=10
+2026-04-29 09:28:25,654 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:28:25,667 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-29 09:28:25,674 | INFO | app_logger | 0ee00d19-8d44-4277-884d-de18cab46610 | User count API called
+2026-04-29 09:28:25,677 | INFO | app_logger | 0ee00d19-8d44-4277-884d-de18cab46610 | User count | total=16
+2026-04-29 09:28:25,678 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:28:25,686 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:28:25,690 | INFO | app_logger | 34020bb1-86c5-45c2-8e97-ba70f758f44b | Create customer | user=admin_1777435098_9051@gmail.com | email=cust_1777435098@test.com
+2026-04-29 09:28:25,691 | INFO | app_logger | 34020bb1-86c5-45c2-8e97-ba70f758f44b | Create customer | email=cust_1777435098@test.com
+2026-04-29 09:28:25,692 | INFO | app_logger | 34020bb1-86c5-45c2-8e97-ba70f758f44b | Customer created | id=69f181e1979d57c4f064ed58
+2026-04-29 09:28:25,694 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:28:25,701 | INFO | app_logger | N/A | GET http://testserver/customers/
+2026-04-29 09:28:25,707 | INFO | app_logger | 763ae779-6feb-480a-ac18-99c8a1e4a2b2 | Fetch customers | user=admin_1777435098_9051@gmail.com | page=1 limit=5
+2026-04-29 09:28:25,707 | INFO | app_logger | 763ae779-6feb-480a-ac18-99c8a1e4a2b2 | Fetch customers | page=1 limit=5
+2026-04-29 09:28:25,716 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:28:25,727 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:28:25,731 | INFO | app_logger | 6014a07b-55ec-4fa7-b8f3-98e93bb8da7c | Create customer | user=admin_1777435098_9051@gmail.com | email=test_1777435105@test.com
+2026-04-29 09:28:25,731 | INFO | app_logger | 6014a07b-55ec-4fa7-b8f3-98e93bb8da7c | Create customer | email=test_1777435105@test.com
+2026-04-29 09:28:25,733 | INFO | app_logger | 6014a07b-55ec-4fa7-b8f3-98e93bb8da7c | Customer created | id=69f181e1979d57c4f064ed59
+2026-04-29 09:28:25,735 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:28:25,741 | INFO | app_logger | N/A | PUT http://testserver/customers/69f181e1979d57c4f064ed59
+2026-04-29 09:28:25,747 | INFO | app_logger | 4694e41f-13d3-4dae-a802-1ba9991b9542 | Update customer | id=69f181e1979d57c4f064ed59 | user=admin_1777435098_9051@gmail.com
+2026-04-29 09:28:25,748 | INFO | app_logger | 4694e41f-13d3-4dae-a802-1ba9991b9542 | Update customer | id=69f181e1979d57c4f064ed59
+2026-04-29 09:28:25,754 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:28:25,760 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:28:25,764 | INFO | app_logger | 22f88b61-e20f-4436-b4ca-a2724c3e3b7a | Create customer | user=admin_1777435098_9051@gmail.com | email=test_1777435105@test.com
+2026-04-29 09:28:25,764 | INFO | app_logger | 22f88b61-e20f-4436-b4ca-a2724c3e3b7a | Create customer | email=test_1777435105@test.com
+2026-04-29 09:28:25,766 | INFO | app_logger | 22f88b61-e20f-4436-b4ca-a2724c3e3b7a | Customer created | id=69f181e1979d57c4f064ed5a
+2026-04-29 09:28:25,767 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:28:25,772 | INFO | app_logger | N/A | DELETE http://testserver/customers/69f181e1979d57c4f064ed5a
+2026-04-29 09:28:25,777 | WARNING | app_logger | 282ada68-b483-4d6e-bd53-48b0c3f0226d | Delete customer | id=69f181e1979d57c4f064ed5a | user=admin_1777435098_9051@gmail.com
+2026-04-29 09:28:25,778 | INFO | app_logger | 282ada68-b483-4d6e-bd53-48b0c3f0226d | Delete customer | id=69f181e1979d57c4f064ed5a
+2026-04-29 09:28:25,779 | INFO | app_logger | 282ada68-b483-4d6e-bd53-48b0c3f0226d | Customer deleted | id=69f181e1979d57c4f064ed5a
+2026-04-29 09:28:25,781 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:31:13,804 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:31:13,812 | INFO | app_logger | e6112524-26d1-4918-a172-04f9ac699bb5 | Register API called | email=refreshuser_1777435273_8047@gmail.com
+2026-04-29 09:31:13,812 | INFO | app_logger | e6112524-26d1-4918-a172-04f9ac699bb5 | Register attempt | email=refreshuser_1777435273_8047@gmail.com username=refreshuser_1777435273_8047
+2026-04-29 09:31:14,152 | INFO | app_logger | e6112524-26d1-4918-a172-04f9ac699bb5 | User registered successfully | email=refreshuser_1777435273_8047@gmail.com
+2026-04-29 09:31:14,155 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:31:16,160 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:31:16,165 | INFO | app_logger | 26b6afac-d287-486a-9c4d-def24e681b10 | Login API called | email=refreshuser_1777435273_8047@gmail.com
+2026-04-29 09:31:16,166 | INFO | app_logger | 26b6afac-d287-486a-9c4d-def24e681b10 | Login attempt | email=refreshuser_1777435273_8047@gmail.com
+2026-04-29 09:31:16,461 | INFO | app_logger | 26b6afac-d287-486a-9c4d-def24e681b10 | Login success | email=refreshuser_1777435273_8047@gmail.com
+2026-04-29 09:31:16,463 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:31:18,471 | INFO | app_logger | N/A | POST http://testserver/auth/refresh
+2026-04-29 09:31:18,478 | INFO | app_logger | 245a0bcc-2bfb-4cb5-a5a4-11148accee12 | Token refresh requested
+2026-04-29 09:31:18,481 | INFO | app_logger | 245a0bcc-2bfb-4cb5-a5a4-11148accee12 | Token refreshed | email=refreshuser_1777435273_8047@gmail.com
+2026-04-29 09:31:18,483 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:32:32,766 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-29 09:32:39,270 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-29 09:32:43,597 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:32:43,606 | INFO | app_logger | 509d96ee-87d3-471a-afb8-dad8f876c157 | Register API called | email=admin_1777435363_3241@gmail.com
+2026-04-29 09:32:43,607 | INFO | app_logger | 509d96ee-87d3-471a-afb8-dad8f876c157 | Register attempt | email=admin_1777435363_3241@gmail.com username=admin_1777435363_3241
+2026-04-29 09:32:43,929 | INFO | app_logger | 509d96ee-87d3-471a-afb8-dad8f876c157 | User registered successfully | email=admin_1777435363_3241@gmail.com
+2026-04-29 09:32:43,930 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:32:45,937 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:32:45,941 | INFO | app_logger | afcbe20f-7553-40c4-9d1d-b4dff792f691 | Login API called | email=admin_1777435363_3241@gmail.com
+2026-04-29 09:32:45,942 | INFO | app_logger | afcbe20f-7553-40c4-9d1d-b4dff792f691 | Login attempt | email=admin_1777435363_3241@gmail.com
+2026-04-29 09:32:46,273 | INFO | app_logger | afcbe20f-7553-40c4-9d1d-b4dff792f691 | Login success | email=admin_1777435363_3241@gmail.com
+2026-04-29 09:32:46,275 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:32:46,282 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:32:46,292 | INFO | app_logger | 0733d011-d4c5-4cab-80d6-c20ccb993054 | Create customer | user=admin_1777435363_3241@gmail.com | email=test_1777435366@test.com
+2026-04-29 09:32:46,293 | INFO | app_logger | 0733d011-d4c5-4cab-80d6-c20ccb993054 | Create customer | email=test_1777435366@test.com
+2026-04-29 09:32:46,298 | INFO | app_logger | 0733d011-d4c5-4cab-80d6-c20ccb993054 | Customer created | id=69f182e62158fecc0f486333
+2026-04-29 09:32:46,299 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:32:46,308 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-29 09:32:46,313 | INFO | app_logger | 08eede55-fd25-4242-881f-0b919dd9f30e | Add address | customer_id=69f182e62158fecc0f486333 | user=admin_1777435363_3241@gmail.com
+2026-04-29 09:32:46,314 | INFO | app_logger | 08eede55-fd25-4242-881f-0b919dd9f30e | Create address | customer_id=69f182e62158fecc0f486333
+2026-04-29 09:32:46,317 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:32:46,327 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:32:46,330 | INFO | app_logger | 674b2630-7cac-4010-ac7a-5a967d5ca71d | Register API called | email=user_1777435363_1052@gmail.com
+2026-04-29 09:32:46,330 | INFO | app_logger | 674b2630-7cac-4010-ac7a-5a967d5ca71d | Register attempt | email=user_1777435363_1052@gmail.com username=user_1777435363_1052
+2026-04-29 09:32:46,601 | INFO | app_logger | 674b2630-7cac-4010-ac7a-5a967d5ca71d | User registered successfully | email=user_1777435363_1052@gmail.com
+2026-04-29 09:32:46,602 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:32:46,610 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:32:46,613 | INFO | app_logger | 319d7c25-080c-46de-8d13-02e9b1b64da1 | Register API called | email=loginuser_1777435363_1052@gmail.com
+2026-04-29 09:32:46,614 | INFO | app_logger | 319d7c25-080c-46de-8d13-02e9b1b64da1 | Register attempt | email=loginuser_1777435363_1052@gmail.com username=loginuser_1777435363_1052
+2026-04-29 09:32:46,881 | INFO | app_logger | 319d7c25-080c-46de-8d13-02e9b1b64da1 | User registered successfully | email=loginuser_1777435363_1052@gmail.com
+2026-04-29 09:32:46,882 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:32:47,891 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:32:47,901 | INFO | app_logger | a87ca0e1-9ba8-49fa-9325-2237a4293069 | Login API called | email=loginuser_1777435363_1052@gmail.com
+2026-04-29 09:32:47,903 | INFO | app_logger | a87ca0e1-9ba8-49fa-9325-2237a4293069 | Login attempt | email=loginuser_1777435363_1052@gmail.com
+2026-04-29 09:32:48,171 | INFO | app_logger | a87ca0e1-9ba8-49fa-9325-2237a4293069 | Login success | email=loginuser_1777435363_1052@gmail.com
+2026-04-29 09:32:48,172 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:32:48,180 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:32:48,183 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:33:08,196 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:33:08,207 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:34:20,186 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:34:20,200 | INFO | app_logger | 4547cae1-f6e6-4894-a5bf-fca428de9423 | Register API called | email=admin_1777435460_4464@gmail.com
+2026-04-29 09:34:20,202 | INFO | app_logger | 4547cae1-f6e6-4894-a5bf-fca428de9423 | Register attempt | email=admin_1777435460_4464@gmail.com username=admin_1777435460_4464
+2026-04-29 09:34:20,490 | INFO | app_logger | 4547cae1-f6e6-4894-a5bf-fca428de9423 | User registered successfully | email=admin_1777435460_4464@gmail.com
+2026-04-29 09:34:20,491 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:34:22,499 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:34:22,505 | INFO | app_logger | a0a90f36-2ca8-48e0-9bd5-bf639be56d75 | Login API called | email=admin_1777435460_4464@gmail.com
+2026-04-29 09:34:22,506 | INFO | app_logger | a0a90f36-2ca8-48e0-9bd5-bf639be56d75 | Login attempt | email=admin_1777435460_4464@gmail.com
+2026-04-29 09:34:22,765 | INFO | app_logger | a0a90f36-2ca8-48e0-9bd5-bf639be56d75 | Login success | email=admin_1777435460_4464@gmail.com
+2026-04-29 09:34:22,766 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:34:22,770 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:34:22,774 | INFO | app_logger | 5d55bb24-50c3-43c2-b24b-f46a0447d7a6 | Create customer | user=admin_1777435460_4464@gmail.com | email=test_1777435462@test.com
+2026-04-29 09:34:22,774 | INFO | app_logger | 5d55bb24-50c3-43c2-b24b-f46a0447d7a6 | Create customer | email=test_1777435462@test.com
+2026-04-29 09:34:22,777 | INFO | app_logger | 5d55bb24-50c3-43c2-b24b-f46a0447d7a6 | Customer created | id=69f183463e25616c87b23f3d
+2026-04-29 09:34:22,778 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:34:22,782 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-29 09:34:22,785 | INFO | app_logger | 1fd26ec9-969c-4c1d-a8f6-17fb7313e4cf | Add address | customer_id=69f183463e25616c87b23f3d | user=admin_1777435460_4464@gmail.com
+2026-04-29 09:34:22,785 | INFO | app_logger | 1fd26ec9-969c-4c1d-a8f6-17fb7313e4cf | Create address | customer_id=69f183463e25616c87b23f3d
+2026-04-29 09:34:22,787 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:34:22,795 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:34:22,798 | INFO | app_logger | eec5930d-bd99-4838-b9d9-dc7336cb60f0 | Register API called | email=user_1777435460_4710@gmail.com
+2026-04-29 09:34:22,798 | INFO | app_logger | eec5930d-bd99-4838-b9d9-dc7336cb60f0 | Register attempt | email=user_1777435460_4710@gmail.com username=user_1777435460_4710
+2026-04-29 09:34:23,031 | INFO | app_logger | eec5930d-bd99-4838-b9d9-dc7336cb60f0 | User registered successfully | email=user_1777435460_4710@gmail.com
+2026-04-29 09:34:23,032 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:34:23,039 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:34:23,041 | INFO | app_logger | 7fb71e6f-5780-4fa2-bb32-84319e68a8d9 | Register API called | email=loginuser_1777435460_4710@gmail.com
+2026-04-29 09:34:23,041 | INFO | app_logger | 7fb71e6f-5780-4fa2-bb32-84319e68a8d9 | Register attempt | email=loginuser_1777435460_4710@gmail.com username=loginuser_1777435460_4710
+2026-04-29 09:34:23,271 | INFO | app_logger | 7fb71e6f-5780-4fa2-bb32-84319e68a8d9 | User registered successfully | email=loginuser_1777435460_4710@gmail.com
+2026-04-29 09:34:23,272 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:34:24,282 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:34:24,291 | INFO | app_logger | 5830c99b-4e0a-45b4-8bc9-03036d157a88 | Login API called | email=loginuser_1777435460_4710@gmail.com
+2026-04-29 09:34:24,293 | INFO | app_logger | 5830c99b-4e0a-45b4-8bc9-03036d157a88 | Login attempt | email=loginuser_1777435460_4710@gmail.com
+2026-04-29 09:34:24,543 | INFO | app_logger | 5830c99b-4e0a-45b4-8bc9-03036d157a88 | Login success | email=loginuser_1777435460_4710@gmail.com
+2026-04-29 09:34:24,544 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:34:24,550 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:34:24,553 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:34:44,560 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:34:44,564 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:35:04,573 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:35:04,580 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:35:04,917 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-29 09:35:04,921 | INFO | app_logger | 519f527a-a38c-4fad-8d6a-8938f5d637e2 | Fetch users API called
+2026-04-29 09:35:04,921 | INFO | app_logger | 519f527a-a38c-4fad-8d6a-8938f5d637e2 | Fetch users | skip=0 limit=10
+2026-04-29 09:35:04,923 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:35:04,930 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-29 09:35:04,934 | INFO | app_logger | 5b6283a9-ff9c-44e3-be86-7fa00bdecd21 | User count API called
+2026-04-29 09:35:04,937 | INFO | app_logger | 5b6283a9-ff9c-44e3-be86-7fa00bdecd21 | User count | total=23
+2026-04-29 09:35:04,939 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:35:04,946 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:35:04,949 | INFO | app_logger | db55a3fb-9cf5-408f-852d-3f229b9eb159 | Create customer | user=admin_1777435460_4464@gmail.com | email=cust_1777435460@test.com
+2026-04-29 09:35:04,950 | INFO | app_logger | db55a3fb-9cf5-408f-852d-3f229b9eb159 | Create customer | email=cust_1777435460@test.com
+2026-04-29 09:35:04,953 | INFO | app_logger | db55a3fb-9cf5-408f-852d-3f229b9eb159 | Customer created | id=69f183703e25616c87b23f41
+2026-04-29 09:35:04,954 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:35:04,964 | INFO | app_logger | N/A | GET http://testserver/customers/
+2026-04-29 09:35:04,970 | INFO | app_logger | dc8b6fe4-88b3-4b6a-86cb-5089fdec6742 | Fetch customers | user=admin_1777435460_4464@gmail.com | page=1 limit=5
+2026-04-29 09:35:04,971 | INFO | app_logger | dc8b6fe4-88b3-4b6a-86cb-5089fdec6742 | Fetch customers | page=1 limit=5
+2026-04-29 09:35:04,977 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:35:04,986 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:35:04,991 | INFO | app_logger | 26fef08c-91e7-4e80-9538-8e592d3fa2ea | Create customer | user=admin_1777435460_4464@gmail.com | email=test_1777435504@test.com
+2026-04-29 09:35:04,992 | INFO | app_logger | 26fef08c-91e7-4e80-9538-8e592d3fa2ea | Create customer | email=test_1777435504@test.com
+2026-04-29 09:35:04,994 | INFO | app_logger | 26fef08c-91e7-4e80-9538-8e592d3fa2ea | Customer created | id=69f183703e25616c87b23f42
+2026-04-29 09:35:04,994 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:35:05,005 | INFO | app_logger | N/A | PUT http://testserver/customers/69f183703e25616c87b23f42
+2026-04-29 09:35:05,011 | INFO | app_logger | fd83d9f6-3b51-4a0b-9340-25217c3b5b6d | Update customer | id=69f183703e25616c87b23f42 | user=admin_1777435460_4464@gmail.com
+2026-04-29 09:35:05,012 | INFO | app_logger | fd83d9f6-3b51-4a0b-9340-25217c3b5b6d | Update customer | id=69f183703e25616c87b23f42
+2026-04-29 09:35:05,020 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:35:05,029 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:35:05,034 | INFO | app_logger | 32f0d7be-8fc8-49ea-acc1-7703c6abac8c | Create customer | user=admin_1777435460_4464@gmail.com | email=test_1777435505@test.com
+2026-04-29 09:35:05,035 | INFO | app_logger | 32f0d7be-8fc8-49ea-acc1-7703c6abac8c | Create customer | email=test_1777435505@test.com
+2026-04-29 09:35:05,039 | INFO | app_logger | 32f0d7be-8fc8-49ea-acc1-7703c6abac8c | Customer created | id=69f183713e25616c87b23f43
+2026-04-29 09:35:05,042 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:35:05,048 | INFO | app_logger | N/A | DELETE http://testserver/customers/69f183713e25616c87b23f43
+2026-04-29 09:35:05,051 | WARNING | app_logger | ca1419ac-097d-4a49-bd5b-4f8b51f10ad8 | Delete customer | id=69f183713e25616c87b23f43 | user=admin_1777435460_4464@gmail.com
+2026-04-29 09:35:05,052 | INFO | app_logger | ca1419ac-097d-4a49-bd5b-4f8b51f10ad8 | Delete customer | id=69f183713e25616c87b23f43
+2026-04-29 09:35:05,055 | INFO | app_logger | ca1419ac-097d-4a49-bd5b-4f8b51f10ad8 | Customer deleted | id=69f183713e25616c87b23f43
+2026-04-29 09:35:05,056 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:35:35,544 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-29 09:36:28,931 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:36:28,942 | INFO | app_logger | f8dd166c-27f1-4f8a-ae9e-603f15ead321 | Register API called | email=admin_1777435588_8082@gmail.com
+2026-04-29 09:36:28,943 | INFO | app_logger | f8dd166c-27f1-4f8a-ae9e-603f15ead321 | Register attempt | email=admin_1777435588_8082@gmail.com username=admin_1777435588_8082
+2026-04-29 09:36:29,225 | INFO | app_logger | f8dd166c-27f1-4f8a-ae9e-603f15ead321 | User registered successfully | email=admin_1777435588_8082@gmail.com
+2026-04-29 09:36:29,226 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:36:31,237 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:36:31,251 | INFO | app_logger | 78cac488-5c5b-48eb-81c6-df85eca0c3a3 | Login API called | email=admin_1777435588_8082@gmail.com
+2026-04-29 09:36:31,254 | INFO | app_logger | 78cac488-5c5b-48eb-81c6-df85eca0c3a3 | Login attempt | email=admin_1777435588_8082@gmail.com
+2026-04-29 09:36:31,547 | INFO | app_logger | 78cac488-5c5b-48eb-81c6-df85eca0c3a3 | Login success | email=admin_1777435588_8082@gmail.com
+2026-04-29 09:36:31,548 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:36:31,553 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:36:31,558 | INFO | app_logger | 2e0d8c57-eec5-49dd-ba62-0d4471ae679b | Create customer | user=admin_1777435588_8082@gmail.com | email=test_1777435591@test.com
+2026-04-29 09:36:31,558 | INFO | app_logger | 2e0d8c57-eec5-49dd-ba62-0d4471ae679b | Create customer | email=test_1777435591@test.com
+2026-04-29 09:36:31,560 | INFO | app_logger | 2e0d8c57-eec5-49dd-ba62-0d4471ae679b | Customer created | id=69f183c7dc0412130f0a5a94
+2026-04-29 09:36:31,561 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:36:31,566 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-29 09:36:31,570 | INFO | app_logger | 41429bed-46d7-4c4a-8b47-c226491a18ff | Add address | customer_id=69f183c7dc0412130f0a5a94 | user=admin_1777435588_8082@gmail.com
+2026-04-29 09:36:31,570 | INFO | app_logger | 41429bed-46d7-4c4a-8b47-c226491a18ff | Create address | customer_id=69f183c7dc0412130f0a5a94
+2026-04-29 09:36:31,572 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:36:31,580 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:36:31,582 | INFO | app_logger | a4547176-f068-4c6d-97b8-5ba7703f4c92 | Register API called | email=user_1777435588_4347@gmail.com
+2026-04-29 09:36:31,583 | INFO | app_logger | a4547176-f068-4c6d-97b8-5ba7703f4c92 | Register attempt | email=user_1777435588_4347@gmail.com username=user_1777435588_4347
+2026-04-29 09:36:31,817 | INFO | app_logger | a4547176-f068-4c6d-97b8-5ba7703f4c92 | User registered successfully | email=user_1777435588_4347@gmail.com
+2026-04-29 09:36:31,819 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:36:31,824 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:36:31,828 | INFO | app_logger | fc1df76e-bd72-4988-81ab-9797c5f03b37 | Register API called | email=loginuser_1777435588_4347@gmail.com
+2026-04-29 09:36:31,828 | INFO | app_logger | fc1df76e-bd72-4988-81ab-9797c5f03b37 | Register attempt | email=loginuser_1777435588_4347@gmail.com username=loginuser_1777435588_4347
+2026-04-29 09:36:32,060 | INFO | app_logger | fc1df76e-bd72-4988-81ab-9797c5f03b37 | User registered successfully | email=loginuser_1777435588_4347@gmail.com
+2026-04-29 09:36:32,061 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:36:33,068 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:36:33,073 | INFO | app_logger | deff5d09-0b86-4f20-8c90-33abd3693fa3 | Login API called | email=loginuser_1777435588_4347@gmail.com
+2026-04-29 09:36:33,074 | INFO | app_logger | deff5d09-0b86-4f20-8c90-33abd3693fa3 | Login attempt | email=loginuser_1777435588_4347@gmail.com
+2026-04-29 09:36:33,317 | INFO | app_logger | deff5d09-0b86-4f20-8c90-33abd3693fa3 | Login success | email=loginuser_1777435588_4347@gmail.com
+2026-04-29 09:36:33,319 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:36:33,325 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:36:33,328 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:36:53,335 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:36:53,341 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:37:13,349 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:37:13,353 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:37:13,366 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-29 09:37:13,371 | INFO | app_logger | f8d7e751-0b1d-4376-b78e-d872d2541404 | Fetch users API called
+2026-04-29 09:37:13,372 | INFO | app_logger | f8d7e751-0b1d-4376-b78e-d872d2541404 | Fetch users | skip=0 limit=10
+2026-04-29 09:37:13,373 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:37:13,385 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-29 09:37:13,393 | INFO | app_logger | 4f034124-fb7e-4d60-9973-6cc6a1f2749c | User count API called
+2026-04-29 09:37:13,397 | INFO | app_logger | 4f034124-fb7e-4d60-9973-6cc6a1f2749c | User count | total=3
+2026-04-29 09:37:13,398 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:37:13,408 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:37:13,416 | INFO | app_logger | 5a74cc39-ec77-412a-b91c-f07bb98a0650 | Create customer | user=admin_1777435588_8082@gmail.com | email=cust_1777435588@test.com
+2026-04-29 09:37:13,416 | INFO | app_logger | 5a74cc39-ec77-412a-b91c-f07bb98a0650 | Create customer | email=cust_1777435588@test.com
+2026-04-29 09:37:13,419 | INFO | app_logger | 5a74cc39-ec77-412a-b91c-f07bb98a0650 | Customer created | id=69f183f1dc0412130f0a5a98
+2026-04-29 09:37:13,420 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:37:13,433 | INFO | app_logger | N/A | GET http://testserver/customers/
+2026-04-29 09:37:13,440 | INFO | app_logger | 26efc7f4-3220-49c6-bd7f-d040c2ea5484 | Fetch customers | user=admin_1777435588_8082@gmail.com | page=1 limit=5
+2026-04-29 09:37:13,441 | INFO | app_logger | 26efc7f4-3220-49c6-bd7f-d040c2ea5484 | Fetch customers | page=1 limit=5
+2026-04-29 09:37:13,450 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:37:13,464 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:37:13,469 | INFO | app_logger | 5d59251b-714f-41c3-a92b-75bf424959ea | Create customer | user=admin_1777435588_8082@gmail.com | email=test_1777435633@test.com
+2026-04-29 09:37:13,470 | INFO | app_logger | 5d59251b-714f-41c3-a92b-75bf424959ea | Create customer | email=test_1777435633@test.com
+2026-04-29 09:37:13,473 | INFO | app_logger | 5d59251b-714f-41c3-a92b-75bf424959ea | Customer created | id=69f183f1dc0412130f0a5a99
+2026-04-29 09:37:13,478 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:37:13,486 | INFO | app_logger | N/A | PUT http://testserver/customers/69f183f1dc0412130f0a5a99
+2026-04-29 09:37:13,494 | INFO | app_logger | 95280acf-8532-4243-a2af-62647952bc84 | Update customer | id=69f183f1dc0412130f0a5a99 | user=admin_1777435588_8082@gmail.com
+2026-04-29 09:37:13,495 | INFO | app_logger | 95280acf-8532-4243-a2af-62647952bc84 | Update customer | id=69f183f1dc0412130f0a5a99
+2026-04-29 09:37:13,502 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:37:13,513 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:37:13,518 | INFO | app_logger | 495d77d8-2724-4e15-b11b-e4e98288bd1e | Create customer | user=admin_1777435588_8082@gmail.com | email=test_1777435633@test.com
+2026-04-29 09:37:13,518 | INFO | app_logger | 495d77d8-2724-4e15-b11b-e4e98288bd1e | Create customer | email=test_1777435633@test.com
+2026-04-29 09:37:13,521 | INFO | app_logger | 495d77d8-2724-4e15-b11b-e4e98288bd1e | Customer created | id=69f183f1dc0412130f0a5a9a
+2026-04-29 09:37:13,523 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:37:13,532 | INFO | app_logger | N/A | DELETE http://testserver/customers/69f183f1dc0412130f0a5a9a
+2026-04-29 09:37:13,536 | WARNING | app_logger | cb263241-4545-4972-9491-62bbb6036ad0 | Delete customer | id=69f183f1dc0412130f0a5a9a | user=admin_1777435588_8082@gmail.com
+2026-04-29 09:37:13,537 | INFO | app_logger | cb263241-4545-4972-9491-62bbb6036ad0 | Delete customer | id=69f183f1dc0412130f0a5a9a
+2026-04-29 09:37:13,541 | INFO | app_logger | cb263241-4545-4972-9491-62bbb6036ad0 | Customer deleted | id=69f183f1dc0412130f0a5a9a
+2026-04-29 09:37:13,542 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:39:35,863 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:39:35,871 | INFO | app_logger | 0a71f7d5-3e9f-45ca-9dfc-302dae91a8e2 | Register API called | email=admin_1777435775_4962@gmail.com
+2026-04-29 09:39:35,871 | INFO | app_logger | 0a71f7d5-3e9f-45ca-9dfc-302dae91a8e2 | Register attempt | email=admin_1777435775_4962@gmail.com username=admin_1777435775_4962
+2026-04-29 09:39:36,162 | INFO | app_logger | 0a71f7d5-3e9f-45ca-9dfc-302dae91a8e2 | User registered successfully | email=admin_1777435775_4962@gmail.com
+2026-04-29 09:39:36,165 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:39:38,175 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:39:38,188 | INFO | app_logger | 96d43f1c-ea12-4870-8189-7e88659f085e | Login API called | email=admin_1777435775_4962@gmail.com
+2026-04-29 09:39:38,188 | INFO | app_logger | 96d43f1c-ea12-4870-8189-7e88659f085e | Login attempt | email=admin_1777435775_4962@gmail.com
+2026-04-29 09:39:38,447 | INFO | app_logger | 96d43f1c-ea12-4870-8189-7e88659f085e | Login success | email=admin_1777435775_4962@gmail.com
+2026-04-29 09:39:38,449 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:39:38,452 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:39:38,457 | INFO | app_logger | 3626241f-3436-4e8a-8a72-9dfd9c1263db | Create customer | user=admin_1777435775_4962@gmail.com | email=test_1777435778@test.com
+2026-04-29 09:39:38,457 | INFO | app_logger | 3626241f-3436-4e8a-8a72-9dfd9c1263db | Create customer | email=test_1777435778@test.com
+2026-04-29 09:39:38,459 | INFO | app_logger | 3626241f-3436-4e8a-8a72-9dfd9c1263db | Customer created | id=69f184826be829b7bb607d1a
+2026-04-29 09:39:38,460 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:39:38,465 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-29 09:39:38,468 | INFO | app_logger | 47a78331-6650-4173-83f5-a22a9c44b5d9 | Add address | customer_id=69f184826be829b7bb607d1a | user=admin_1777435775_4962@gmail.com
+2026-04-29 09:39:38,469 | INFO | app_logger | 47a78331-6650-4173-83f5-a22a9c44b5d9 | Create address | customer_id=69f184826be829b7bb607d1a
+2026-04-29 09:39:38,471 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:39:38,477 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:39:38,480 | INFO | app_logger | ef354f3f-272e-4aee-ac45-e8ac5044af84 | Register API called | email=user_1777435775_1007@gmail.com
+2026-04-29 09:39:38,480 | INFO | app_logger | ef354f3f-272e-4aee-ac45-e8ac5044af84 | Register attempt | email=user_1777435775_1007@gmail.com username=user_1777435775_1007
+2026-04-29 09:39:38,740 | INFO | app_logger | ef354f3f-272e-4aee-ac45-e8ac5044af84 | User registered successfully | email=user_1777435775_1007@gmail.com
+2026-04-29 09:39:38,742 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:39:38,749 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:39:38,752 | INFO | app_logger | 2e8f430b-570a-4f82-a22d-f8dc11712144 | Register API called | email=loginuser_1777435775_1007@gmail.com
+2026-04-29 09:39:38,753 | INFO | app_logger | 2e8f430b-570a-4f82-a22d-f8dc11712144 | Register attempt | email=loginuser_1777435775_1007@gmail.com username=loginuser_1777435775_1007
+2026-04-29 09:39:38,990 | INFO | app_logger | 2e8f430b-570a-4f82-a22d-f8dc11712144 | User registered successfully | email=loginuser_1777435775_1007@gmail.com
+2026-04-29 09:39:38,991 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:39:40,001 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 09:39:40,010 | INFO | app_logger | 6a7ab722-4f94-49d7-af0e-1d37ebbf95d7 | Login API called | email=loginuser_1777435775_1007@gmail.com
+2026-04-29 09:39:40,011 | INFO | app_logger | 6a7ab722-4f94-49d7-af0e-1d37ebbf95d7 | Login attempt | email=loginuser_1777435775_1007@gmail.com
+2026-04-29 09:39:40,261 | INFO | app_logger | 6a7ab722-4f94-49d7-af0e-1d37ebbf95d7 | Login success | email=loginuser_1777435775_1007@gmail.com
+2026-04-29 09:39:40,263 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:39:40,268 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:39:40,271 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:40:00,282 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:40:00,293 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:40:20,305 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 09:40:20,313 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 09:40:20,328 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-29 09:40:20,336 | INFO | app_logger | a10c2933-6a71-4c56-8ac4-7b14cb2cd5a5 | Fetch users API called
+2026-04-29 09:40:20,337 | INFO | app_logger | a10c2933-6a71-4c56-8ac4-7b14cb2cd5a5 | Fetch users | skip=0 limit=10
+2026-04-29 09:40:20,340 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:40:20,354 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-29 09:40:20,365 | INFO | app_logger | 63e5428a-5992-4210-b147-992cbbe59db7 | User count API called
+2026-04-29 09:40:20,368 | INFO | app_logger | 63e5428a-5992-4210-b147-992cbbe59db7 | User count | total=6
+2026-04-29 09:40:20,369 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:40:20,383 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:40:20,390 | INFO | app_logger | 8305734c-126b-4020-9e72-20491bdb1909 | Create customer | user=admin_1777435775_4962@gmail.com | email=cust_1777435775@test.com
+2026-04-29 09:40:20,391 | INFO | app_logger | 8305734c-126b-4020-9e72-20491bdb1909 | Create customer | email=cust_1777435775@test.com
+2026-04-29 09:40:20,398 | INFO | app_logger | 8305734c-126b-4020-9e72-20491bdb1909 | Customer created | id=69f184ac6be829b7bb607d1e
+2026-04-29 09:40:20,400 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:40:20,413 | INFO | app_logger | N/A | GET http://testserver/customers/
+2026-04-29 09:40:20,422 | INFO | app_logger | 93d72768-5bd7-4b32-9f9c-1f3c9a419a15 | Fetch customers | user=admin_1777435775_4962@gmail.com | page=1 limit=5
+2026-04-29 09:40:20,423 | INFO | app_logger | 93d72768-5bd7-4b32-9f9c-1f3c9a419a15 | Fetch customers | page=1 limit=5
+2026-04-29 09:40:20,435 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:40:20,449 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:40:20,456 | INFO | app_logger | e1d1344a-2dc0-4889-856d-9631d0c70af5 | Create customer | user=admin_1777435775_4962@gmail.com | email=test_1777435820@test.com
+2026-04-29 09:40:20,457 | INFO | app_logger | e1d1344a-2dc0-4889-856d-9631d0c70af5 | Create customer | email=test_1777435820@test.com
+2026-04-29 09:40:20,462 | INFO | app_logger | e1d1344a-2dc0-4889-856d-9631d0c70af5 | Customer created | id=69f184ac6be829b7bb607d1f
+2026-04-29 09:40:20,465 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:40:20,474 | INFO | app_logger | N/A | PUT http://testserver/customers/69f184ac6be829b7bb607d1f
+2026-04-29 09:40:20,485 | INFO | app_logger | a66c8656-e971-4d40-b98e-996ca7090feb | Update customer | id=69f184ac6be829b7bb607d1f | user=admin_1777435775_4962@gmail.com
+2026-04-29 09:40:20,486 | INFO | app_logger | a66c8656-e971-4d40-b98e-996ca7090feb | Update customer | id=69f184ac6be829b7bb607d1f
+2026-04-29 09:40:20,497 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:40:20,509 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 09:40:20,517 | INFO | app_logger | 70deb6c9-9110-4264-88e6-a4d3f25f289e | Create customer | user=admin_1777435775_4962@gmail.com | email=test_1777435820@test.com
+2026-04-29 09:40:20,517 | INFO | app_logger | 70deb6c9-9110-4264-88e6-a4d3f25f289e | Create customer | email=test_1777435820@test.com
+2026-04-29 09:40:20,521 | INFO | app_logger | 70deb6c9-9110-4264-88e6-a4d3f25f289e | Customer created | id=69f184ac6be829b7bb607d20
+2026-04-29 09:40:20,523 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 09:40:20,535 | INFO | app_logger | N/A | DELETE http://testserver/customers/69f184ac6be829b7bb607d20
+2026-04-29 09:40:20,542 | WARNING | app_logger | d3f4aaf0-94fd-44fb-81bb-8fdf0dad1384 | Delete customer | id=69f184ac6be829b7bb607d20 | user=admin_1777435775_4962@gmail.com
+2026-04-29 09:40:20,544 | INFO | app_logger | d3f4aaf0-94fd-44fb-81bb-8fdf0dad1384 | Delete customer | id=69f184ac6be829b7bb607d20
+2026-04-29 09:40:20,546 | INFO | app_logger | d3f4aaf0-94fd-44fb-81bb-8fdf0dad1384 | Customer deleted | id=69f184ac6be829b7bb607d20
+2026-04-29 09:40:20,549 | INFO | app_logger | N/A | Response status: 200

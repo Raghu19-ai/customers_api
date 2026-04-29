@@ -1,16 +1,28 @@
-from sqlalchemy.orm import Session, joinedload
-from models.customer import Customer
-from models.address import Address
+from database.connection import customers_collection, addresses_collection
+from models.customer import create_customer_doc, customer_to_response
+from models.address import create_address_doc, address_to_response
 from utils.exceptions import CustomException
 from utils.logger import logger
-from utils.validator import validate_email   
+from utils.validator import validate_email
 from datetime import datetime
+from bson import ObjectId
+
+
+def _get_customer_with_addresses(customer_id: str) -> dict:
+    """Helper to fetch customer with their addresses."""
+    customer = customers_collection.find_one({"_id": ObjectId(customer_id)})
+    if not customer:
+        return None
+    customer_data = customer_to_response(customer)
+    addresses = list(addresses_collection.find({"customer_id": customer_id}))
+    customer_data["addresses"] = [address_to_response(addr) for addr in addresses]
+    return customer_data
 
 
 # CUSTOMER CSV BULK INSERT
-def create_customer_from_csv(db: Session, rows: list[dict]):
+def create_customer_from_csv(rows: list[dict]):
     try:
-        customers = []
+        customers_to_insert = []
 
         for row in rows:
             name = row.get("name")
@@ -29,69 +41,73 @@ def create_customer_from_csv(db: Session, rows: list[dict]):
                 logger.debug(f"Skip row | invalid email={email}")
                 continue
 
-            existing = db.query(Customer).filter(Customer.email == email).first()
+            existing = customers_collection.find_one({"email": email})
             if existing:
                 logger.debug(f"Skip row | reason=duplicate email={email}")
                 continue
 
-            customers.append(Customer(
-                name=name,
-                email=email,
-                phone=row.get("phone"),
-                company=row.get("company"),
-                created_at=datetime.utcnow().isoformat(),
-                updated_at=datetime.utcnow().isoformat()
-            ))
+            now = datetime.utcnow().isoformat()
+            customers_to_insert.append({
+                "name": name,
+                "email": email,
+                "phone": row.get("phone"),
+                "company": row.get("company"),
+                "created_at": now,
+                "updated_at": now
+            })
 
-        db.add_all(customers)
-        db.commit()
-
-        logger.info(f"CSV customers inserted | count={len(customers)}")
-        return customers
+        if customers_to_insert:
+            result = customers_collection.insert_many(customers_to_insert)
+            logger.info(f"CSV customers inserted | count={len(result.inserted_ids)}")
+            return customers_to_insert
+        return []
 
     except Exception:
-        db.rollback()
         logger.exception("Customer CSV upload failed")
         raise CustomException("Customer CSV upload failed", 500)
 
 
 # ADDRESS CSV BULK INSERT
-def create_address_from_csv(db: Session, rows: list[dict]):
+def create_address_from_csv(rows: list[dict]):
     try:
-        addresses = []
+        addresses_to_insert = []
 
         for row in rows:
-            try:
-                customer_id = int(row.get("customer_id"))
-            except:
+            customer_id = row.get("customer_id")
+            if not customer_id:
                 logger.debug(f"Skip row | invalid customer_id data={row}")
                 continue
 
-            if not db.query(Customer).filter(Customer.id == customer_id).first():
-                logger.debug(f"Skip row | customer not found id={customer_id}")
+            # Check if customer exists
+            try:
+                cid = ObjectId(customer_id) if isinstance(customer_id, str) else customer_id
+                if not customers_collection.find_one({"_id": cid}):
+                    logger.debug(f"Skip row | customer not found id={customer_id}")
+                    continue
+            except:
+                logger.debug(f"Skip row | invalid customer_id format data={row}")
                 continue
 
-            addresses.append(Address(
-                customer_id=customer_id,
-                city=row.get("city"),
-                state=row.get("state"),
-                pincode=row.get("pincode")
-            ))
+            addresses_to_insert.append({
+                "customer_id": str(customer_id),
+                "city": row.get("city"),
+                "state": row.get("state"),
+                "pincode": row.get("pincode")
+            })
 
-        db.add_all(addresses)
-        db.commit()
-
-        logger.info(f"CSV addresses inserted | count={len(addresses)}")
-        return addresses
+        if addresses_to_insert:
+            result = addresses_collection.insert_many(addresses_to_insert)
+            logger.info(f"CSV addresses inserted | count={len(result.inserted_ids)}")
+            return addresses_to_insert
+        return []
 
     except Exception:
-        db.rollback()
         logger.exception("Address CSV upload failed")
         raise CustomException("Address CSV upload failed", 500)
 
 
 # CREATE CUSTOMER
-def create_customer(db: Session, data):
+def create_customer(data):
     try:
         email = data.email.lower().strip()
         logger.info(f"Create customer | email={email}")
@@ -99,75 +115,79 @@ def create_customer(db: Session, data):
         # EMAIL VALIDATION
         validate_email(email)
 
-        existing = db.query(Customer).filter(Customer.email == email).first()
+        existing = customers_collection.find_one({"email": email})
         if existing:
             raise CustomException("Email already exists", 400)
 
-        new_customer = Customer(
-            **data.dict(exclude={"created_at", "updated_at", "email"}),
-            email=email,
-            created_at=datetime.utcnow().isoformat(),
-            updated_at=datetime.utcnow().isoformat()
-        )
+        customer_doc = create_customer_doc(data.model_dump())
+        result = customers_collection.insert_one(customer_doc)
+        customer_doc["_id"] = result.inserted_id
 
-        db.add(new_customer)
-        db.commit()
-        db.refresh(new_customer)
+        logger.info(f"Customer created | id={result.inserted_id}")
 
-        logger.info(f"Customer created | id={new_customer.id}")
-
-        return db.query(Customer).options(
-            joinedload(Customer.addresses)
-        ).filter(Customer.id == new_customer.id).first()
+        return customer_to_response(customer_doc)
 
     except CustomException:
         raise
 
     except Exception:
-        db.rollback()
         logger.exception("Create customer failed")
         raise CustomException("Failed to create customer", 500)
 
 
 # CREATE ADDRESS
-def create_address(db: Session, data):
+def create_address(data):
     try:
         logger.info(f"Create address | customer_id={data.customer_id}")
 
-        customer = db.query(Customer).filter(Customer.id == data.customer_id).first()
+        # Check if customer exists
+        try:
+            cid = ObjectId(data.customer_id) if isinstance(data.customer_id, str) else data.customer_id
+            customer = customers_collection.find_one({"_id": cid})
+        except:
+            customer = None
+
         if not customer:
             raise CustomException("Customer not found", 404)
 
-        new_address = Address(**data.dict())
+        address_doc = create_address_doc({
+            "customer_id": data.customer_id,
+            "city": data.city,
+            "state": data.state,
+            "pincode": data.pincode
+        })
 
-        db.add(new_address)
-        db.commit()
-        db.refresh(new_address)
+        result = addresses_collection.insert_one(address_doc)
+        address_doc["_id"] = result.inserted_id
 
-        return new_address
+        return address_to_response(address_doc)
 
     except CustomException:
         raise
 
     except Exception:
-        db.rollback()
         logger.exception("Create address failed")
         raise CustomException("Failed to create address", 500)
 
 
 # GET ALL CUSTOMERS
-def get_all_customers(db: Session, page: int = 1, limit: int = 10):
+def get_all_customers(page: int = 1, limit: int = 10):
     try:
         offset = (page - 1) * limit
         logger.info(f"Fetch customers | page={page} limit={limit}")
 
-        return (
-            db.query(Customer)
-            .options(joinedload(Customer.addresses))
-            .offset(offset)
-            .limit(limit)
-            .all()
-        )
+        customers = list(customers_collection.find().skip(offset).limit(limit))
+
+        # Fetch addresses for each customer
+        result = []
+        for customer in customers:
+            customer_data = customer_to_response(customer)
+            customer_id = str(customer["_id"])
+            addresses = list(addresses_collection.find({"customer_id": customer_id}))
+            customer_data["addresses"] = [address_to_response(addr) for addr in addresses]
+            result.append(customer_data)
+
+        return result
 
     except Exception:
         logger.exception("Fetch customers failed")
@@ -175,21 +195,15 @@ def get_all_customers(db: Session, page: int = 1, limit: int = 10):
 
 
 # GET ONE CUSTOMER
-def get_customer_by_id(db: Session, customer_id):
+def get_customer_by_id(customer_id: str):
     try:
         logger.info(f"Fetch customer | id={customer_id}")
 
-        customer = (
-            db.query(Customer)
-            .options(joinedload(Customer.addresses))
-            .filter(Customer.id == customer_id)
-            .first()
-        )
-
-        if not customer:
+        customer_data = _get_customer_with_addresses(customer_id)
+        if not customer_data:
             raise CustomException("Customer not found", 404)
 
-        return customer
+        return customer_data
 
     except CustomException:
         raise
@@ -200,15 +214,21 @@ def get_customer_by_id(db: Session, customer_id):
 
 
 # PATCH CUSTOMER
-def patch_customer(db: Session, customer_id, data):
+def patch_customer(customer_id: str, data):
     try:
         logger.info(f"Patch customer | id={customer_id}")
 
-        customer = db.query(Customer).filter(Customer.id == customer_id).first()
+        # Check customer exists
+        try:
+            cid = ObjectId(customer_id)
+        except:
+            raise CustomException("Invalid customer ID", 400)
+
+        customer = customers_collection.find_one({"_id": cid})
         if not customer:
             raise CustomException("Customer not found", 404)
 
-        update_data = data.dict(exclude_unset=True)
+        update_data = {k: v for k, v in data.model_dump(exclude_unset=True).items() if v is not None}
 
         if "email" in update_data:
             email = update_data["email"].lower().strip()
@@ -216,43 +236,45 @@ def patch_customer(db: Session, customer_id, data):
             # EMAIL VALIDATION
             validate_email(email)
 
-            existing = db.query(Customer).filter(
-                Customer.email == email,
-                Customer.id != customer_id
-            ).first()
+            existing = customers_collection.find_one({
+                "email": email,
+                "_id": {"$ne": cid}
+            })
 
             if existing:
                 raise CustomException("Email already exists", 400)
 
             update_data["email"] = email
 
-        for key, value in update_data.items():
-            setattr(customer, key, value)
+        update_data["updated_at"] = datetime.utcnow().isoformat()
 
-        customer.updated_at = datetime.utcnow().isoformat()
+        customers_collection.update_one(
+            {"_id": cid},
+            {"$set": update_data}
+        )
 
-        db.commit()
-        db.refresh(customer)
-
-        return db.query(Customer).options(
-            joinedload(Customer.addresses)
-        ).filter(Customer.id == customer_id).first()
+        return _get_customer_with_addresses(customer_id)
 
     except CustomException:
         raise
 
     except Exception:
-        db.rollback()
         logger.exception("Patch customer failed")
         raise CustomException("Failed to update customer", 500)
 
 
 # UPDATE CUSTOMER
-def update_customer(db: Session, customer_id, data):
+def update_customer(customer_id: str, data):
     try:
         logger.info(f"Update customer | id={customer_id}")
 
-        customer = db.query(Customer).filter(Customer.id == customer_id).first()
+        # Check customer exists
+        try:
+            cid = ObjectId(customer_id)
+        except:
+            raise CustomException("Invalid customer ID", 400)
+
+        customer = customers_collection.find_one({"_id": cid})
         if not customer:
             raise CustomException("Customer not found", 404)
 
@@ -261,46 +283,50 @@ def update_customer(db: Session, customer_id, data):
         # EMAIL VALIDATION
         validate_email(email)
 
-        existing = db.query(Customer).filter(
-            Customer.email == email,
-            Customer.id != customer_id
-        ).first()
+        existing = customers_collection.find_one({
+            "email": email,
+            "_id": {"$ne": cid}
+        })
 
         if existing:
             raise CustomException("Email already exists", 400)
 
-        for key, value in data.dict().items():
-            setattr(customer, key, value)
+        update_data = data.model_dump()
+        update_data["email"] = email
+        update_data["updated_at"] = datetime.utcnow().isoformat()
 
-        customer.updated_at = datetime.utcnow().isoformat()
+        customers_collection.update_one(
+            {"_id": cid},
+            {"$set": update_data}
+        )
 
-        db.commit()
-        db.refresh(customer)
-
-        return db.query(Customer).options(
-            joinedload(Customer.addresses)
-        ).filter(Customer.id == customer_id).first()
+        return _get_customer_with_addresses(customer_id)
 
     except CustomException:
         raise
 
     except Exception:
-        db.rollback()
         logger.exception("Update customer failed")
         raise CustomException("Failed to update customer", 500)
 
 
 # DELETE CUSTOMER
-def delete_customer(db: Session, customer_id):
+def delete_customer(customer_id: str):
     try:
         logger.info(f"Delete customer | id={customer_id}")
 
-        customer = db.query(Customer).filter(Customer.id == customer_id).first()
-        if not customer:
+        try:
+            cid = ObjectId(customer_id)
+        except:
+            raise CustomException("Invalid customer ID", 400)
+
+        # Delete customer
+        result = customers_collection.delete_one({"_id": cid})
+        if result.deleted_count == 0:
             raise CustomException("Customer not found", 404)
 
-        db.delete(customer)
-        db.commit()
+        # Delete associated addresses
+        addresses_collection.delete_many({"customer_id": customer_id})
 
         logger.info(f"Customer deleted | id={customer_id}")
 
@@ -310,6 +336,5 @@ def delete_customer(db: Session, customer_id):
         raise
 
     except Exception:
-        db.rollback()
         logger.exception("Delete customer failed")
         raise CustomException("Failed to delete customer", 500)

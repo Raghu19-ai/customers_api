@@ -1,23 +1,33 @@
-
 """
 User Model
 
-Defines the User table for authentication:
+Defines the User document for MongoDB authentication:
 - Stores email, password, and role
 - Used for login and authorization
 
 Supports role-based access control.
 """
-from sqlalchemy import Column, Integer, String
-from database.connection import Base
+from bson import ObjectId
 
-class User(Base):
-    __tablename__ = "users"
+def create_user_doc(data: dict, user_id: str = None) -> dict:
+    """Create a user document for MongoDB insertion."""
+    doc = {
+        "email": data.get("email", "").lower().strip() if data.get("email") else None,
+        "username": data.get("username", "").lower().strip() if data.get("username") else None,
+        "password": data.get("password"),
+        "role": data.get("role", "user"),
+    }
+    if user_id:
+        doc["_id"] = ObjectId(user_id) if isinstance(user_id, str) else user_id
+    return doc
 
-    id = Column(Integer, primary_key=True)
-    email = Column(String, unique=True, index=True, nullable=False)
-    username = Column(String, unique=True, index=True, nullable=False)
-    password = Column(String)
-
-    # NEW FIELD AS ROLE
-    role = Column(String, default="user")  
+def user_to_response(doc: dict) -> dict:
+    """Convert MongoDB user document to API response format."""
+    if not doc:
+        return None
+    return {
+        "id": str(doc.get("_id")) if doc.get("_id") else None,
+        "email": doc.get("email"),
+        "username": doc.get("username"),
+        "role": doc.get("role"),
+    }

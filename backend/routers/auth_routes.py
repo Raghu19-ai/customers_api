@@ -11,9 +11,7 @@ Uses permission-based access control.
 """
 
 from fastapi import APIRouter, Depends, Request, status, Body
-from sqlalchemy.orm import Session
 
-from database.connection import get_db
 from schemas.users_schema import UserCreate, UserLogin, UserResponse, LoginResponse
 
 from services.auth_service import (
@@ -49,9 +47,9 @@ router = APIRouter(prefix="/auth", tags=["Auth"])
     }
 )
 @limiter.limit("3/minute")
-def register(request: Request, user: UserCreate, db: Session = Depends(get_db)):
+def register(request: Request, user: UserCreate):
     logger.info(f"Register API called | email={user.email}")
-    return register_user(db, user)
+    return register_user(user)
 
 
 # LOGIN USER
@@ -70,9 +68,9 @@ def register(request: Request, user: UserCreate, db: Session = Depends(get_db)):
     }
 )
 @limiter.limit("5/minute")
-def login(request: Request, user: UserLogin, db: Session = Depends(get_db)):
+def login(request: Request, user: UserLogin):
     logger.info(f"Login API called | email={user.email}")
-    return login_user(db, user.email, user.password)
+    return login_user(user.email, user.password)
 
 
 
@@ -91,11 +89,10 @@ def login(request: Request, user: UserLogin, db: Session = Depends(get_db)):
 @limiter.limit("10/minute")
 def refresh_token(
     request: Request,
-    token: str = Body(...),   
-    db: Session = Depends(get_db)
+    token: str = Body(...)
 ):
     logger.info("Token refresh requested")
-    return refresh_access_token(db, token)
+    return refresh_access_token(token)
 
 
 
@@ -115,11 +112,10 @@ def refresh_token(
 @limiter.limit("10/minute")
 def get_users(
     request: Request,
-    db: Session = Depends(get_db),
     user=Depends(require_permission("user_read"))
 ):
     logger.info(f"Fetch users API called")
-    return get_all_users(db)
+    return get_all_users()
 
 
 # USER COUNT
@@ -137,11 +133,10 @@ def get_users(
 @limiter.limit("10/minute")
 def get_count(
     request: Request,
-    db: Session = Depends(get_db),
     user=Depends(require_permission("user_read"))
 ):
     logger.info("User count API called")
-    return get_user_count(db)
+    return get_user_count()
 
 
 # DELETE USER
@@ -161,9 +156,8 @@ def get_count(
 @limiter.limit("5/minute")
 def remove_user(
     request: Request,
-    user_id: int,
-    db: Session = Depends(get_db),
+    user_id: str,
     user=Depends(require_permission("user_delete"))
 ):
     logger.warning(f"Delete user API called | user_id={user_id}")
-    return delete_user(db, user_id)
+    return delete_user(user_id)

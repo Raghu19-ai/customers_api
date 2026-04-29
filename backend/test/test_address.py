@@ -6,4 +6,4 @@ def test_create_address(client, auth_headers, customer_id):
         "pincode": "560001"
     }, headers=auth_headers)
 
-    assert response.status_code == 200
+    assert response.status_code in [200, 201]

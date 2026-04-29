@@ -3,7 +3,6 @@ from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 
-from database.connection import engine, Base
 from routers.customer_router import router as customer_router, addr_router
 from routers.auth_routes import router as auth_router
 
@@ -91,8 +90,7 @@ app.add_middleware(
 # Startup Event
 @app.on_event("startup")
 def on_startup():
-    Base.metadata.create_all(bind=engine)
-    logger.info("Application started successfully")
+    logger.info("Application started successfully with MongoDB")
 
 
 

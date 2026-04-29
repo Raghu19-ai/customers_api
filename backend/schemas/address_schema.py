@@ -15,10 +15,10 @@ class AddressBase(BaseModel):
     pincode: str = Field(..., description="The postal or zip code", example="10001")
 
 class AddressCreate(AddressBase):
-    customer_id: int = Field(..., description="The ID of the customer this address belongs to", example=1)
+    customer_id: str = Field(..., description="The ID of the customer this address belongs to", example="507f1f77bcf86cd799439011")
 
 class AddressResponse(AddressBase):
-    id: int = Field(..., description="The unique identifier for the address", example=1)
-    customer_id: int = Field(..., description="The ID of the customer this address belongs to", example=1)
+    id: str = Field(..., description="The unique identifier for the address", example="507f1f77bcf86cd799439011")
+    customer_id: str = Field(..., description="The ID of the customer this address belongs to", example="507f1f77bcf86cd799439011")
 
     model_config = ConfigDict(from_attributes=True)
