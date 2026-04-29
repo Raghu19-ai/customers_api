@@ -10420,3 +10420,15 @@ FROM customers
 2026-04-29 09:40:20,544 | INFO | app_logger | d3f4aaf0-94fd-44fb-81bb-8fdf0dad1384 | Delete customer | id=69f184ac6be829b7bb607d20
 2026-04-29 09:40:20,546 | INFO | app_logger | d3f4aaf0-94fd-44fb-81bb-8fdf0dad1384 | Customer deleted | id=69f184ac6be829b7bb607d20
 2026-04-29 09:40:20,549 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:43:24,030 | INFO | app_logger | N/A | GET http://127.0.0.1:8000/docs
+2026-04-29 09:43:24,034 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:43:24,465 | INFO | app_logger | N/A | GET http://127.0.0.1:8000/openapi.json
+2026-04-29 09:43:24,632 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:43:36,877 | INFO | app_logger | N/A | GET http://127.0.0.1:8000/redoc
+2026-04-29 09:43:36,880 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:43:37,097 | INFO | app_logger | N/A | GET http://127.0.0.1:8000/openapi.json
+2026-04-29 09:43:37,099 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:50:41,167 | INFO | app_logger | N/A | GET http://127.0.0.1:8000/docs
+2026-04-29 09:50:41,170 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 09:50:41,396 | INFO | app_logger | N/A | GET http://127.0.0.1:8000/openapi.json
+2026-04-29 09:50:41,400 | INFO | app_logger | N/A | Response status: 200

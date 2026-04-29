@@ -251,7 +251,7 @@ async function addCustomer() {
 async function addAddress() {
     const token = localStorage.getItem("token");
     const payload = {
-        customer_id: parseInt(document.getElementById("addr_customer_id").value),
+        customer_id: document.getElementById("addr_customer_id").value,
         city: document.getElementById("city").value,
         state: document.getElementById("state").value,
         pincode: document.getElementById("pincode").value
