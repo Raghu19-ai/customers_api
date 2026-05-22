@@ -10432,3 +10432,235 @@ FROM customers
 2026-04-29 09:50:41,170 | INFO | app_logger | N/A | Response status: 200
 2026-04-29 09:50:41,396 | INFO | app_logger | N/A | GET http://127.0.0.1:8000/openapi.json
 2026-04-29 09:50:41,400 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:09:25,376 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-29 10:09:44,326 | INFO | app_logger | N/A | GET http://localhost:8000/
+2026-04-29 10:09:44,329 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:09:44,561 | INFO | app_logger | N/A | GET http://localhost:8000/favicon.ico
+2026-04-29 10:09:44,563 | INFO | app_logger | N/A | Response status: 404
+2026-04-29 10:11:32,406 | INFO | app_logger | N/A | GET http://localhost:8000/
+2026-04-29 10:11:32,411 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:11:32,588 | INFO | app_logger | N/A | GET http://localhost:8000/favicon.ico
+2026-04-29 10:11:32,590 | INFO | app_logger | N/A | Response status: 404
+2026-04-29 10:11:32,701 | INFO | app_logger | N/A | GET http://localhost:8000/
+2026-04-29 10:11:32,705 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:12:14,622 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-29 10:13:21,968 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-29 10:14:34,794 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-29 10:14:41,792 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 10:14:41,802 | INFO | app_logger | 4c0768a3-da9d-4403-b224-e5e6105719aa | Register API called | email=admin_1777437881_2421@gmail.com
+2026-04-29 10:14:41,803 | INFO | app_logger | 4c0768a3-da9d-4403-b224-e5e6105719aa | Register attempt | email=admin_1777437881_2421@gmail.com username=admin_1777437881_2421
+2026-04-29 10:14:42,107 | INFO | app_logger | 4c0768a3-da9d-4403-b224-e5e6105719aa | User registered successfully | email=admin_1777437881_2421@gmail.com
+2026-04-29 10:14:42,108 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 10:14:44,113 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 10:14:44,118 | INFO | app_logger | 9d464be4-4655-402f-9751-6b84570c10e5 | Login API called | email=admin_1777437881_2421@gmail.com
+2026-04-29 10:14:44,118 | INFO | app_logger | 9d464be4-4655-402f-9751-6b84570c10e5 | Login attempt | email=admin_1777437881_2421@gmail.com
+2026-04-29 10:14:44,398 | INFO | app_logger | 9d464be4-4655-402f-9751-6b84570c10e5 | Login success | email=admin_1777437881_2421@gmail.com
+2026-04-29 10:14:44,399 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:14:44,402 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 10:14:44,408 | INFO | app_logger | 44eae2eb-d2e8-47a6-bd1f-0dacd1ecff97 | Create customer | user=admin_1777437881_2421@gmail.com | email=test_1777437884@test.com
+2026-04-29 10:14:44,409 | INFO | app_logger | 44eae2eb-d2e8-47a6-bd1f-0dacd1ecff97 | Create customer | email=test_1777437884@test.com
+2026-04-29 10:14:44,411 | INFO | app_logger | 44eae2eb-d2e8-47a6-bd1f-0dacd1ecff97 | Customer created | id=69f18cbc2c813340534d2022
+2026-04-29 10:14:44,412 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 10:14:44,417 | INFO | app_logger | N/A | POST http://testserver/addresses/
+2026-04-29 10:14:44,422 | INFO | app_logger | 30ee8b80-0b66-4c7a-b373-2ca68a5019c7 | Add address | customer_id=69f18cbc2c813340534d2022 | user=admin_1777437881_2421@gmail.com
+2026-04-29 10:14:44,422 | INFO | app_logger | 30ee8b80-0b66-4c7a-b373-2ca68a5019c7 | Create address | customer_id=69f18cbc2c813340534d2022
+2026-04-29 10:14:44,424 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 10:14:44,431 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 10:14:44,433 | INFO | app_logger | b86006b1-db33-4d2b-9b34-c4caa4f2da3a | Register API called | email=user_1777437881_7536@gmail.com
+2026-04-29 10:14:44,433 | INFO | app_logger | b86006b1-db33-4d2b-9b34-c4caa4f2da3a | Register attempt | email=user_1777437881_7536@gmail.com username=user_1777437881_7536
+2026-04-29 10:14:44,701 | INFO | app_logger | b86006b1-db33-4d2b-9b34-c4caa4f2da3a | User registered successfully | email=user_1777437881_7536@gmail.com
+2026-04-29 10:14:44,702 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 10:14:44,709 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 10:14:44,712 | INFO | app_logger | 848c56c3-02ab-4a9b-a703-f2adf56a7e0a | Register API called | email=loginuser_1777437881_7536@gmail.com
+2026-04-29 10:14:44,712 | INFO | app_logger | 848c56c3-02ab-4a9b-a703-f2adf56a7e0a | Register attempt | email=loginuser_1777437881_7536@gmail.com username=loginuser_1777437881_7536
+2026-04-29 10:14:44,982 | INFO | app_logger | 848c56c3-02ab-4a9b-a703-f2adf56a7e0a | User registered successfully | email=loginuser_1777437881_7536@gmail.com
+2026-04-29 10:14:44,983 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 10:14:45,988 | INFO | app_logger | N/A | POST http://testserver/auth/login
+2026-04-29 10:14:45,993 | INFO | app_logger | dd8c604e-7967-4f86-9f24-dae3e4fff720 | Login API called | email=loginuser_1777437881_7536@gmail.com
+2026-04-29 10:14:45,994 | INFO | app_logger | dd8c604e-7967-4f86-9f24-dae3e4fff720 | Login attempt | email=loginuser_1777437881_7536@gmail.com
+2026-04-29 10:14:46,268 | INFO | app_logger | dd8c604e-7967-4f86-9f24-dae3e4fff720 | Login success | email=loginuser_1777437881_7536@gmail.com
+2026-04-29 10:14:46,268 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:14:46,276 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 10:14:46,280 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 10:15:06,288 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 10:15:06,294 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 10:15:26,302 | INFO | app_logger | N/A | POST http://testserver/auth/register
+2026-04-29 10:15:26,308 | INFO | app_logger | N/A | Response status: 429
+2026-04-29 10:15:26,314 | INFO | app_logger | N/A | GET http://testserver/auth/users
+2026-04-29 10:15:26,317 | INFO | app_logger | 8d5ea197-1363-45ee-a5b8-6dcf0bac5e05 | Fetch users API called
+2026-04-29 10:15:26,318 | INFO | app_logger | 8d5ea197-1363-45ee-a5b8-6dcf0bac5e05 | Fetch users | skip=0 limit=10
+2026-04-29 10:15:26,320 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:15:26,327 | INFO | app_logger | N/A | GET http://testserver/auth/users/count
+2026-04-29 10:15:26,330 | INFO | app_logger | c06ea356-dd9c-49ed-9995-7b3399690983 | User count API called
+2026-04-29 10:15:26,332 | INFO | app_logger | c06ea356-dd9c-49ed-9995-7b3399690983 | User count | total=9
+2026-04-29 10:15:26,333 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:15:26,341 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 10:15:26,344 | INFO | app_logger | 57f03a1e-fbe2-44d0-8b0e-6e291ac97de2 | Create customer | user=admin_1777437881_2421@gmail.com | email=cust_1777437881@test.com
+2026-04-29 10:15:26,345 | INFO | app_logger | 57f03a1e-fbe2-44d0-8b0e-6e291ac97de2 | Create customer | email=cust_1777437881@test.com
+2026-04-29 10:15:26,348 | INFO | app_logger | 57f03a1e-fbe2-44d0-8b0e-6e291ac97de2 | Customer created | id=69f18ce62c813340534d2026
+2026-04-29 10:15:26,349 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 10:15:26,357 | INFO | app_logger | N/A | GET http://testserver/customers/
+2026-04-29 10:15:26,363 | INFO | app_logger | 4f5dc846-2092-4d5d-a156-4ee9f1203d9a | Fetch customers | user=admin_1777437881_2421@gmail.com | page=1 limit=5
+2026-04-29 10:15:26,365 | INFO | app_logger | 4f5dc846-2092-4d5d-a156-4ee9f1203d9a | Fetch customers | page=1 limit=5
+2026-04-29 10:15:26,372 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:15:26,380 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 10:15:26,384 | INFO | app_logger | c0dd8096-66f1-45d8-9b8e-7410a51fcd3c | Create customer | user=admin_1777437881_2421@gmail.com | email=test_1777437926@test.com
+2026-04-29 10:15:26,386 | INFO | app_logger | c0dd8096-66f1-45d8-9b8e-7410a51fcd3c | Create customer | email=test_1777437926@test.com
+2026-04-29 10:15:26,389 | INFO | app_logger | c0dd8096-66f1-45d8-9b8e-7410a51fcd3c | Customer created | id=69f18ce62c813340534d2027
+2026-04-29 10:15:26,391 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 10:15:26,400 | INFO | app_logger | N/A | PUT http://testserver/customers/69f18ce62c813340534d2027
+2026-04-29 10:15:26,405 | INFO | app_logger | 9c80c35f-4982-42c2-be23-8a2aa59002c8 | Update customer | id=69f18ce62c813340534d2027 | user=admin_1777437881_2421@gmail.com
+2026-04-29 10:15:26,407 | INFO | app_logger | 9c80c35f-4982-42c2-be23-8a2aa59002c8 | Update customer | id=69f18ce62c813340534d2027
+2026-04-29 10:15:26,415 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:15:26,422 | INFO | app_logger | N/A | POST http://testserver/customers/
+2026-04-29 10:15:26,427 | INFO | app_logger | 8cb33873-3aa3-4e40-9407-d430a7833698 | Create customer | user=admin_1777437881_2421@gmail.com | email=test_1777437926@test.com
+2026-04-29 10:15:26,427 | INFO | app_logger | 8cb33873-3aa3-4e40-9407-d430a7833698 | Create customer | email=test_1777437926@test.com
+2026-04-29 10:15:26,430 | INFO | app_logger | 8cb33873-3aa3-4e40-9407-d430a7833698 | Customer created | id=69f18ce62c813340534d2028
+2026-04-29 10:15:26,432 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 10:15:26,438 | INFO | app_logger | N/A | DELETE http://testserver/customers/69f18ce62c813340534d2028
+2026-04-29 10:15:26,443 | WARNING | app_logger | 571bf3cc-2c1f-490c-829a-979dd26b83fd | Delete customer | id=69f18ce62c813340534d2028 | user=admin_1777437881_2421@gmail.com
+2026-04-29 10:15:26,444 | INFO | app_logger | 571bf3cc-2c1f-490c-829a-979dd26b83fd | Delete customer | id=69f18ce62c813340534d2028
+2026-04-29 10:15:26,445 | INFO | app_logger | 571bf3cc-2c1f-490c-829a-979dd26b83fd | Customer deleted | id=69f18ce62c813340534d2028
+2026-04-29 10:15:26,446 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:17:11,008 | INFO | app_logger | N/A | GET http://127.0.0.1:8080/
+2026-04-29 10:17:11,019 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:17:11,159 | INFO | app_logger | N/A | GET http://127.0.0.1:8080/favicon.ico
+2026-04-29 10:17:11,160 | INFO | app_logger | N/A | Response status: 404
+2026-04-29 10:17:32,438 | INFO | app_logger | N/A | GET http://127.0.0.1:8080/
+2026-04-29 10:17:32,440 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:17:32,588 | INFO | app_logger | N/A | GET http://127.0.0.1:8080/favicon.ico
+2026-04-29 10:17:32,589 | INFO | app_logger | N/A | Response status: 404
+2026-04-29 10:18:27,748 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-29 10:19:43,241 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-29 10:29:36,652 | INFO | app_logger | N/A | Application started successfully with MongoDB
+2026-04-29 10:29:39,221 | INFO | app_logger | N/A | GET http://localhost:8000/docs
+2026-04-29 10:29:39,227 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:29:41,134 | INFO | app_logger | N/A | GET http://localhost:8000/openapi.json
+2026-04-29 10:29:41,360 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:29:48,377 | INFO | app_logger | N/A | GET http://localhost:8000/
+2026-04-29 10:29:48,390 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:29:48,492 | INFO | app_logger | N/A | GET http://localhost:8000/favicon.ico
+2026-04-29 10:29:48,495 | INFO | app_logger | N/A | Response status: 404
+2026-04-29 10:29:53,227 | INFO | app_logger | N/A | GET http://localhost:8000/docs
+2026-04-29 10:29:53,230 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:29:54,355 | INFO | app_logger | N/A | GET http://localhost:8000/openapi.json
+2026-04-29 10:29:54,359 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:31:29,125 | INFO | app_logger | N/A | POST http://localhost:8000/auth/register
+2026-04-29 10:31:29,137 | INFO | app_logger | cc87faea-e394-4fcd-828c-3f0898c85e6b | Register API called | email=test_superadmin@example.com
+2026-04-29 10:31:29,139 | INFO | app_logger | cc87faea-e394-4fcd-828c-3f0898c85e6b | Register attempt | email=test_superadmin@example.com username=test_superadmin
+2026-04-29 10:31:29,612 | INFO | app_logger | cc87faea-e394-4fcd-828c-3f0898c85e6b | User registered successfully | email=test_superadmin@example.com
+2026-04-29 10:31:29,615 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 10:33:07,053 | INFO | app_logger | N/A | POST http://localhost:8000/auth/login
+2026-04-29 10:33:07,068 | INFO | app_logger | 43302bc1-8f05-4c5e-9174-d726a2ace90e | Login API called | email=test_superadmin@example.com
+2026-04-29 10:33:07,070 | INFO | app_logger | 43302bc1-8f05-4c5e-9174-d726a2ace90e | Login attempt | email=test_superadmin@example.com
+2026-04-29 10:33:07,473 | INFO | app_logger | 43302bc1-8f05-4c5e-9174-d726a2ace90e | Login success | email=test_superadmin@example.com
+2026-04-29 10:33:07,476 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:35:02,273 | INFO | app_logger | N/A | GET http://localhost:8000/customers/?page=1&limit=5
+2026-04-29 10:35:02,305 | INFO | app_logger | c34c4a48-0b73-4bfe-8dcb-fd662a67e91e | Fetch customers | user=test_superadmin@example.com | page=1 limit=5
+2026-04-29 10:35:02,305 | INFO | app_logger | c34c4a48-0b73-4bfe-8dcb-fd662a67e91e | Fetch customers | page=1 limit=5
+2026-04-29 10:35:02,343 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:36:15,669 | INFO | app_logger | N/A | GET http://localhost:8000/docs
+2026-04-29 10:36:15,673 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:36:15,819 | INFO | app_logger | N/A | GET http://localhost:8000/openapi.json
+2026-04-29 10:36:15,822 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:38:34,008 | INFO | app_logger | N/A | POST http://localhost:8000/customers/
+2026-04-29 10:38:34,031 | INFO | app_logger | b8895fe9-34bc-43f7-998d-e1785dcb5c35 | Create customer | user=test_superadmin@example.com | email=test_customer_unique@example.com
+2026-04-29 10:38:34,033 | INFO | app_logger | b8895fe9-34bc-43f7-998d-e1785dcb5c35 | Create customer | email=test_customer_unique@example.com
+2026-04-29 10:38:34,051 | INFO | app_logger | b8895fe9-34bc-43f7-998d-e1785dcb5c35 | Customer created | id=69f1925229dab8f7a9f9abc9
+2026-04-29 10:38:34,053 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 10:39:43,939 | INFO | app_logger | N/A | GET http://localhost:8000/openapi.json
+2026-04-29 10:39:43,949 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:39:54,745 | INFO | app_logger | N/A | GET http://localhost:8000/docs
+2026-04-29 10:39:54,761 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:39:54,982 | INFO | app_logger | N/A | GET http://localhost:8000/openapi.json
+2026-04-29 10:39:54,990 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:40:24,677 | INFO | app_logger | N/A | POST http://localhost:8000/addresses/
+2026-04-29 10:40:24,689 | INFO | app_logger | N/A | Response status: 401
+2026-04-29 10:46:19,710 | INFO | app_logger | N/A | GET http://localhost:8000/docs
+2026-04-29 10:46:19,714 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:46:20,229 | INFO | app_logger | N/A | GET http://localhost:8000/openapi.json
+2026-04-29 10:46:20,232 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:47:18,157 | INFO | app_logger | N/A | POST http://localhost:8000/auth/register
+2026-04-29 10:47:18,166 | INFO | app_logger | 1327a0e2-64c5-42d4-95fd-d427a4bd101f | Register API called | email=full_test_admin@example.com
+2026-04-29 10:47:18,168 | INFO | app_logger | 1327a0e2-64c5-42d4-95fd-d427a4bd101f | Register attempt | email=full_test_admin@example.com username=full_test_admin
+2026-04-29 10:47:18,616 | INFO | app_logger | 1327a0e2-64c5-42d4-95fd-d427a4bd101f | User registered successfully | email=full_test_admin@example.com
+2026-04-29 10:47:18,619 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 10:48:25,308 | INFO | app_logger | N/A | POST http://localhost:8000/auth/login
+2026-04-29 10:48:25,312 | INFO | app_logger | ab15e773-a964-4320-8df7-ec2cb6b7ce7d | Login API called | email=full_test_admin@example.com
+2026-04-29 10:48:25,314 | INFO | app_logger | ab15e773-a964-4320-8df7-ec2cb6b7ce7d | Login attempt | email=full_test_admin@example.com
+2026-04-29 10:48:25,664 | INFO | app_logger | ab15e773-a964-4320-8df7-ec2cb6b7ce7d | Login success | email=full_test_admin@example.com
+2026-04-29 10:48:25,668 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:50:47,038 | INFO | app_logger | N/A | GET http://localhost:8000/auth/users/count
+2026-04-29 10:50:47,046 | INFO | app_logger | e0dc2a3d-5af1-4ff4-b677-d8f394580412 | User count API called
+2026-04-29 10:50:47,059 | INFO | app_logger | e0dc2a3d-5af1-4ff4-b677-d8f394580412 | User count | total=11
+2026-04-29 10:50:47,062 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:51:28,561 | INFO | app_logger | N/A | GET http://localhost:8000/auth/users
+2026-04-29 10:51:28,573 | INFO | app_logger | 3fcfaafc-7385-40ce-a5ac-edf4fe0e8e95 | Fetch users API called
+2026-04-29 10:51:28,575 | INFO | app_logger | 3fcfaafc-7385-40ce-a5ac-edf4fe0e8e95 | Fetch users | skip=0 limit=10
+2026-04-29 10:51:28,581 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:52:51,417 | INFO | app_logger | N/A | POST http://localhost:8000/auth/refresh
+2026-04-29 10:52:51,431 | INFO | app_logger | f1b51a92-df56-46e1-b438-d516d7cb2550 | Token refresh requested
+2026-04-29 10:52:51,436 | INFO | app_logger | f1b51a92-df56-46e1-b438-d516d7cb2550 | Token refreshed | email=full_test_admin@example.com
+2026-04-29 10:52:51,438 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 10:53:58,934 | INFO | app_logger | N/A | GET http://localhost:8000/customers/?page=1&limit=5
+2026-04-29 10:53:58,943 | INFO | app_logger | 2c5c581a-79a5-4d11-acd8-b197996cc874 | Fetch customers | user=full_test_admin@example.com | page=1 limit=5
+2026-04-29 10:53:58,944 | INFO | app_logger | 2c5c581a-79a5-4d11-acd8-b197996cc874 | Fetch customers | page=1 limit=5
+2026-04-29 10:53:58,968 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 11:00:17,124 | INFO | app_logger | N/A | POST http://localhost:8000/customers/
+2026-04-29 11:00:17,247 | INFO | app_logger | 928f77d3-5949-4171-b27e-077d780f93e5 | Create customer | user=full_test_admin@example.com | email=manual_test_customer_1777435591@example.com
+2026-04-29 11:00:17,275 | INFO | app_logger | 928f77d3-5949-4171-b27e-077d780f93e5 | Create customer | email=manual_test_customer_1777435591@example.com
+2026-04-29 11:00:17,315 | INFO | app_logger | 928f77d3-5949-4171-b27e-077d780f93e5 | Customer created | id=69f1976929dab8f7a9f9abcb
+2026-04-29 11:00:17,342 | INFO | app_logger | N/A | Response status: 201
+2026-04-29 11:01:51,130 | INFO | app_logger | N/A | GET http://localhost:8000/customers/69f1976929dab8f7a9f9abcb
+2026-04-29 11:01:51,146 | INFO | app_logger | 82438b49-075b-406c-851c-4d6684c5e5b4 | Fetch customer | id=69f1976929dab8f7a9f9abcb | user=full_test_admin@example.com
+2026-04-29 11:01:51,148 | INFO | app_logger | 82438b49-075b-406c-851c-4d6684c5e5b4 | Fetch customer | id=69f1976929dab8f7a9f9abcb
+2026-04-29 11:01:51,158 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 11:03:48,789 | INFO | app_logger | N/A | PATCH http://localhost:8000/customers/69f1976929dab8f7a9f9abcb
+2026-04-29 11:03:48,794 | INFO | app_logger | 8fd37f70-b1bc-46bb-bdd2-496dc3f05d53 | Patch customer | id=69f1976929dab8f7a9f9abcb | user=full_test_admin@example.com
+2026-04-29 11:03:48,795 | INFO | app_logger | 8fd37f70-b1bc-46bb-bdd2-496dc3f05d53 | Patch customer | id=69f1976929dab8f7a9f9abcb
+2026-04-29 11:03:48,799 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 11:11:47,203 | INFO | app_logger | N/A | PUT http://localhost:8000/customers/69f1976929dab8f7a9f9abcb
+2026-04-29 11:11:47,236 | INFO | app_logger | 4ee62c2b-0503-434c-9357-deaaa661950f | Update customer | id=69f1976929dab8f7a9f9abcb | user=full_test_admin@example.com
+2026-04-29 11:11:47,246 | INFO | app_logger | 4ee62c2b-0503-434c-9357-deaaa661950f | Update customer | id=69f1976929dab8f7a9f9abcb
+2026-04-29 11:11:47,278 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 11:13:06,185 | INFO | app_logger | N/A | DELETE http://localhost:8000/customers/69f1976929dab8f7a9f9abcb
+2026-04-29 11:13:06,202 | WARNING | app_logger | ef303a48-13f7-44a5-be56-33927967e709 | Delete customer | id=69f1976929dab8f7a9f9abcb | user=full_test_admin@example.com
+2026-04-29 11:13:06,203 | INFO | app_logger | ef303a48-13f7-44a5-be56-33927967e709 | Delete customer | id=69f1976929dab8f7a9f9abcb
+2026-04-29 11:13:06,210 | INFO | app_logger | ef303a48-13f7-44a5-be56-33927967e709 | Customer deleted | id=69f1976929dab8f7a9f9abcb
+2026-04-29 11:13:06,221 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 11:23:40,342 | INFO | app_logger | N/A | POST http://localhost:8000/customers/
+2026-04-29 11:23:40,353 | ERROR | app_logger | 62c88cba-3ae0-4713-985b-f9458e08d2cc | Validation Error: [{'type': 'json_invalid', 'loc': ('body', 323), 'msg': 'JSON decode error', 'input': {}, 'ctx': {'error': "Expecting ',' delimiter"}}] | Body: b'{\n  "name": "Address Test Customer",\n  "age": 28,\n  "gender": "Female",\n  "date_of_birth": "1996-05-15",\n  "email": "address_test_customer@example.com",\n  "phone": "1122334455",\n  "alternate_phone": "5544332211",\n  "company": "Address Corp",\n  "job_title": "Architect",\n  "experience_years": 4,\n  "customer_type": "Regular"urce": "Referral"\n},\n  "status": "Active",\n  "notes": "Testing address association",\n  "so'
+2026-04-29 11:23:40,358 | INFO | app_logger | N/A | Response status: 422
+2026-04-29 11:26:03,924 | INFO | app_logger | N/A | POST http://localhost:8000/customers/
+2026-04-29 11:26:03,934 | ERROR | app_logger | 06444400-0ceb-4207-a312-565c32f0f4f8 | Validation Error: [{'type': 'json_invalid', 'loc': ('body', 291), 'msg': 'JSON decode error', 'input': {}, 'ctx': {'error': 'Unterminated string starting at'}}] | Body: b'{\n  "name": "Addr Test",\n  "age": 28,\n  "gender": "Female",\n  "date_of_birth": "1996-05-15",\n  "email": "addr_test@example.com",\n  "phone": "1122334455",\n  "company": "Addr Corp",\n  "job_title": "Arch",\n  "experience_years": 4,\n  "customer_type": "Regular",\n  "status": "Active",\n  "notes": "Tes'
+2026-04-29 11:26:03,947 | INFO | app_logger | N/A | Response status: 422
+2026-04-29 11:26:40,088 | INFO | app_logger | N/A | POST http://localhost:8000/customers/
+2026-04-29 11:26:40,095 | ERROR | app_logger | 2fe8b585-43ee-40a1-b834-6df0a8838a71 | Validation Error: [{'type': 'json_invalid', 'loc': ('body', 317), 'msg': 'JSON decode error', 'input': {}, 'ctx': {'error': 'Extra data'}}] | Body: b'{\n  "name": "Addr Test",\n  "age": 28,\n  "gender": "Female",\n  "date_of_birth": "1996-05-15",\n  "email": "addr_test@example.com",\n  "phone": "1122334455",\n  "company": "Addr Corp",\n  "job_title": "Arch",\n  "experience_years": 4,\n  "customer_type": "Regular",\n  "status": "Active",\n  "notes": "Tet",\n  "source": "Ref"\n}s'
+2026-04-29 11:26:40,099 | INFO | app_logger | N/A | Response status: 422
+2026-04-29 11:27:00,152 | INFO | app_logger | N/A | POST http://localhost:8000/customers/
+2026-04-29 11:27:00,161 | ERROR | app_logger | a7331ea8-3a4c-4784-b5a5-b1d176e93f29 | Validation Error: [{'type': 'json_invalid', 'loc': ('body', 282), 'msg': 'JSON decode error', 'input': {}, 'ctx': {'error': 'Expecting property name enclosed in double quotes'}}] | Body: b'{\n  "name": "Addr Test",\n  "age": 28,\n  "gender": "Female",\n  "date_of_birth": "1996-05-15",\n  "email": "addr_test@example.com",\n  "phone": "1122334455",\n  "company": "Addr Corp",\n  "job_title": "Arch",\n  "experience_years": 4,\n  "customer_type": "Regular",\n  "status": "Active",\n  notes": "Tet",\n  "source": "Ref"\n}s'
+2026-04-29 11:27:00,165 | INFO | app_logger | N/A | Response status: 422
+2026-04-29 11:27:27,589 | INFO | app_logger | N/A | POST http://localhost:8000/customers/
+2026-04-29 11:27:27,598 | ERROR | app_logger | bb353a65-1c4b-41fe-b508-9f3aa926d816 | Validation Error: [{'type': 'json_invalid', 'loc': ('body', 282), 'msg': 'JSON decode error', 'input': {}, 'ctx': {'error': 'Expecting property name enclosed in double quotes'}}] | Body: b'{\n  "name": "Addr Test",\n  "age": 28,\n  "gender": "Female",\n  "date_of_birth": "1996-05-15",\n  "email": "addr_test@example.com",\n  "phone": "1122334455",\n  "company": "Addr Corp",\n  "job_title": "Arch",\n  "experience_years": 4,\n  "customer_type": "Regular",\n  "status": "Active",\n  otes": "Tet",\n  "source": "Ref"\n}s'
+2026-04-29 11:27:27,600 | INFO | app_logger | N/A | Response status: 422
+2026-04-29 11:27:55,067 | INFO | app_logger | N/A | POST http://localhost:8000/customers/
+2026-04-29 11:27:55,075 | ERROR | app_logger | a7c20b2e-39d7-4b28-8791-d0cafb6437bf | Validation Error: [{'type': 'json_invalid', 'loc': ('body', 281), 'msg': 'JSON decode error', 'input': {}, 'ctx': {'error': 'Expecting property name enclosed in double quotes'}}] | Body: b'{\n  "name": "Addr Test",\n  "age": 28,\n  "gender": "Female",\n  "date_of_birth": "1996-05-15",\n  "email": "addr_test@example.com",\n  "phone": "1122334455",\n  "company": "Addr Corp",\n  "job_title": "Arch",\n  "xperience_years": 4,\n  "customer_type": "Regular",\n  "status": "Active",\n  otes": "Tet",\n  "source": "Ref"\n}s'
+2026-04-29 11:27:55,078 | INFO | app_logger | N/A | Response status: 422
+2026-04-29 11:29:07,462 | INFO | app_logger | N/A | POST http://localhost:8000/customers/
+2026-04-29 11:29:07,473 | ERROR | app_logger | d4870c1e-00b5-4b52-a85d-1126e6029def | Validation Error: [{'type': 'missing', 'loc': ('body', 'age'), 'msg': 'Field required', 'input': {'name': 'Addr Test', 'email': 'addr_test@example.com', 'phone': '12345678'}}, {'type': 'missing', 'loc': ('body', 'gender'), 'msg': 'Field required', 'input': {'name': 'Addr Test', 'email': 'addr_test@example.com', 'phone': '12345678'}}, {'type': 'missing', 'loc': ('body', 'date_of_birth'), 'msg': 'Field required', 'input': {'name': 'Addr Test', 'email': 'addr_test@example.com', 'phone': '12345678'}}] | Body: b'{ "name": "Addr Test", "email": "addr_test@example.com", "phone": "12345678" }'
+2026-04-29 11:29:07,475 | INFO | app_logger | N/A | Response status: 422
+2026-04-29 11:31:11,093 | INFO | app_logger | N/A | GET http://127.0.0.1:8000/docs
+2026-04-29 11:31:11,107 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 11:31:11,692 | INFO | app_logger | N/A | GET http://127.0.0.1:8000/openapi.json
+2026-04-29 11:31:11,702 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 11:31:19,073 | INFO | app_logger | N/A | GET http://localhost:8000/docs
+2026-04-29 11:31:19,079 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 11:31:19,712 | INFO | app_logger | N/A | GET http://localhost:8000/openapi.json
+2026-04-29 11:31:19,716 | INFO | app_logger | N/A | Response status: 200
+2026-04-29 11:33:00,274 | INFO | app_logger | N/A | POST http://localhost:8000/customers/
+2026-04-29 11:33:00,279 | INFO | app_logger | N/A | Response status: 401
+2026-04-29 11:34:02,028 | INFO | app_logger | N/A | POST http://localhost:8000/customers/
+2026-04-29 11:34:02,039 | INFO | app_logger | da957d9d-4061-4d45-af63-66ed224796f0 | Create customer | user=full_test_admin@example.com | email=addr_test_final@example.com
+2026-04-29 11:34:02,042 | INFO | app_logger | da957d9d-4061-4d45-af63-66ed224796f0 | Create customer | email=addr_test_final@example.com
+2026-04-29 11:34:02,054 | INFO | app_logger | da957d9d-4061-4d45-af63-66ed224796f0 | Customer created | id=69f19f5229dab8f7a9f9abcc
+2026-04-29 11:34:02,059 | INFO | app_logger | N/A | Response status: 201
